@@ -1,0 +1,36 @@
+.player-section .buttons-container {
+    position: relative;
+}
+
+.player-section .buttons-container .buttons-body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.player-section .buttons-container .buttons-body .buttons-item {
+    width: calc(50% - 1rem);
+}
+
+.player-section .buttons-container .buttons-body .buttons-item .button-content {
+    display: flex;
+    justify-content: center;
+}
+
+.player-section .title-absolute {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: calc(50% - 325px);
+    position: absolute;
+    top: -51px;
+    width: 650px;
+}
+
+.player-section  .title-content .title-2 h2 {
+    color: var(--primary);
+    line-height: 0.8em;
+}
+

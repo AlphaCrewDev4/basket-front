@@ -1,0 +1,54 @@
+.instruction-section {
+    position: relative;
+    width: 100%;
+}
+
+.instruction-section .instruction-content {
+    position: relative;
+}
+
+.instruction-section .instruction-content .title-absolute {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: calc(50% - 325px);
+    position: absolute;
+    top: -51px;
+    width: 650px;
+}
+
+.instruction-section .instruction-content .content-absolute {
+    align-items: center;
+    bottom: -43px;
+    display: flex;
+    justify-content: center;
+    left: calc(50% - 230px);
+    position: absolute;
+    width: 460px;
+}
+
+.instruction-section .instruction-content .image-content img {
+    position: relative;
+    z-index: 1;
+}
+
+.instruction-section .instruction-content .title-content .title-2 h2 {
+    color: var(--primary);
+    line-height: 0.8em;
+}
+
+.instruction-section .instruction-content .text-content {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin: 2rem 0;
+}
+
+.instruction-section .button-content button,
+.instruction-section .button-content a {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 80% 100%, 0% 100%, 0% 50%);
+}
+
+.instruction-section .button-content.button-left button,
+.instruction-section .button-content.button-left a {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 20% 100%, 0% 50%);
+}

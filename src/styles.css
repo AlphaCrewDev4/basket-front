@@ -1,0 +1,228 @@
+/*Import Fonts*/
+@font-face {
+    font-family: "Noma";
+    src: url('/fonts/noma-regular.ttf');
+}
+
+@font-face {
+    font-family: "Cragres";
+    src: url('/fonts/cragres.otf');
+}
+
+@font-face {
+    font-family: "Glitch Slap";
+    src: url('/fonts/glitch-slap.otf');
+}
+
+@property --gradient {
+    syntax: "<angle>";
+    initial-value: 90deg;
+    inherits: false;
+}
+
+/*General Colors*/
+:root {
+    --light: #fff;
+    --dark: #000;
+    --primary: #FBCB4F;
+    --secondary: #1A1B37;
+    --btn-primary: #D37C0A;
+    --btn-secondary: #F9C348;
+    --bg-background: #111827;
+    --clr-card: #1f2937;
+    --clr-1: #6420aa;
+    --clr-2: #fab812;
+    --clr-3: #FBCB4F;
+}
+
+/*General Styles*/
+.body img {
+    width: 100%;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.button-content a,
+.button-content button {
+    /*animation: gradientBG 4.5s ease infinite;
+    background: linear-gradient(-45deg, #ffd6d6, #faffb0, #c0ffb6, #d0ddff, #e1bfff);
+    background-size: 400% 400%;*/
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    border: none !important;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%);
+    color: var(--secondary);
+    display: inline-block;
+    font-size: 36px;
+    padding: 1rem 3rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-content.button-left a,
+.button-content.button-left button {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 5% 100%, 0% 50%);
+}
+
+.button-content a:hover,
+.button-content button:hover {
+    color: var(--light);
+    transform: scale(1.05);
+}
+
+.title-content .title-2 h2 {
+    font-size: 3.5rem;
+}
+
+.text-content p {
+    font-size: 30px;
+}
+
+/*Principal section styles*/
+.body .principal-section {
+    align-items: center;
+    background: url('/images/bg-intro.jpg');
+    background-color: #1A1B37;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--light);
+    display: flex;
+    font-family: 'Glitch Slap', Times, serif;
+    justify-content: center;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+}
+
+.body .principal-section.second-bg {
+    background: url('/images/bg-intro-2.jpg');
+    background-color: #1A1B37;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body .principal-section .title-content,
+.body .principal-section .button-content {
+    font-family: "Cragres", Times, serif;
+}
+
+.body .welcome-section .title-content .title-1 h1 {
+    font-size: 7rem;
+    line-height: 1.2em;
+}
+
+.body .principal-section .image-absolute {
+    position: absolute;
+    width: 250px;
+}
+
+.body .principal-section .image-absolute.image-left {
+    left: 2rem;
+    top: 2rem;
+}
+
+.body .principal-section .image-absolute.image-right {
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.body .border-general-section {
+    align-items: center;
+    border: 3px solid var(--primary);
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 4rem;
+    position: relative;
+}
+
+.body .border-general-section::before,
+.body .border-general-section::after {
+    background-color: var(--primary);
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: -1.5px;
+    width: 25%;
+}
+
+.body .border-general-section::before {
+    left: 0;
+}
+
+.body .border-general-section::after {
+    right: 0;
+}
+
+.body .animation-border {
+    border-radius: 0.45rem;
+    background-color: var(--clr-card);
+    padding: 0.4rem;
+    position: relative;
+    width: 100%;
+}
+
+.body .animation-border img {
+    position: relative;
+    z-index: 1;
+}
+
+.body .animation-border::after,
+.body .animation-border::before {
+    content: " ";
+    position: absolute;
+    z-index: 0;
+    inset: -0.5rem;
+    background: conic-gradient(from var(--gradient),
+            var(--clr-card),
+            var(--clr-1),
+            var(--clr-2),
+            var(--clr-3),
+            var(--clr-2),
+            var(--clr-1),
+            var(--clr-card));
+    border-radius: inherit;
+    animation: rotate 2.5s linear infinite;
+}
+
+.body .animation-border::after {
+    filter: blur(3rem);
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes rotate {
+    0% {
+        --gradient: 0deg;
+    }
+
+    100% {
+        --gradient: 360deg;
+    }
+}
