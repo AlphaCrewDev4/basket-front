@@ -3,13 +3,13 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { pageLinks } from '../utils/constants';
-import './styles.css';
 import { UserForm } from '../components/user/UserForm';
+import './styles.css';
 
 export const UserPage = () => {
     return (
         <AppLayout>
-            <section className='principal-section'>
+            <section className='principal-section second-bg'>
                 <section className='user-section'>
                     <div className="container">
                         <div className="row">

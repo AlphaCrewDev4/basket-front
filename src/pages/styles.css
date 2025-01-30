@@ -42,15 +42,63 @@
 
 .user-section .title-absolute {
     align-items: center;
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%);
     display: flex;
     justify-content: center;
     left: calc(50% - 325px);
+    padding: 1rem;
     position: absolute;
     top: -51px;
     width: 650px;
 }
 
 .user-section .title-content .title-2 h2 {
-    color: var(--primary);
+    color: var(--dark);
     line-height: 0.8em;
+}
+
+/*Select Team*/
+.body .principal-section.team-configuration .image-absolute.image-left {
+    bottom: 2rem;
+    top: initial;
+}
+
+.body .team-configuration-section {
+    position: relative;
+    width: 100%;
+}
+
+.body .team-configuration-section .border-general-section {
+    border: none;
+    padding: 4rem 2rem;
+}
+
+.body .team-configuration-section .border-general-section::before {
+    background-color: var(--team-green);
+}
+
+.body .team-configuration-section .border-general-section::after {
+    background-color: var(--team-blue);
+}
+
+/*Select Team*/
+.body .principal-section.pre-game .image-absolute.image-left {
+    bottom: 2rem;
+    top: initial;
+}
+
+.body .pre-game-section {
+    position: relative;
+    width: 100%;
+}
+
+.body .pre-game-section .border-general-section {
+    border: none;
+    padding: 4rem 2rem;
+}
+
+.body .pre-game-section .border-general-section::before,
+.body .pre-game-section .border-general-section::after {
+    display: none;
 }

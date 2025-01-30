@@ -6,7 +6,7 @@ import { UserButtons } from '../components/user/UserButtons';
 export const PlayerPage = () => {
     return (
         <AppLayout>
-            <section className='principal-section'>
+            <section className='principal-section second-bg'>
                 <section className='player-section'>
                     <div className="container">
                         <div className="row">

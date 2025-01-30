@@ -27,7 +27,7 @@ export const UserButtons = () => {
                             transition={{ duration: 1 }}
                         >
                             <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 2</Link>
+                                <Link to={pageLinks.selectTeamPage}>Player 2</Link>
                             </div>
                         </motion.div>
                     </div>
@@ -38,7 +38,7 @@ export const UserButtons = () => {
                             transition={{ duration: 1 }}
                         >
                             <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 3</Link>
+                                <Link to={pageLinks.preGamePage}>Player 3</Link>
                             </div>
                         </motion.div>
                     </div>

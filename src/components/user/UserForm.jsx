@@ -15,7 +15,12 @@ export const UserForm = () => {
         errorPhone: '',
     });
 
-    const onInputChange = () => {}
+    const onInputChange = ({ target }) => {
+        setFormOptions({
+            ...formOptions,
+            [target.name]: target.value,
+        });
+    }
 
     return (
         <>
@@ -23,8 +28,7 @@ export const UserForm = () => {
                 <div className="text-content">
                     <p>Nice <br /> How should we call you?</p>
                 </div>
-                <div className="user-input mt-3">
-                    <label htmlFor="username" className="form-label">Name</label>
+                <div className="user-input mt-4">
                     <input
                         type="text"
                         className="form-control"
@@ -36,8 +40,7 @@ export const UserForm = () => {
                     />
                     <span className='error-span'>{formError.errorName}</span>
                 </div>
-                <div className="user-input mt-3">
-                    <label htmlFor="username" className="form-label">Email</label>
+                <div className="user-input mt-4">
                     <input
                         type="text"
                         className="form-control"
@@ -49,8 +52,7 @@ export const UserForm = () => {
                     />
                     <span className='error-span'>{formError.errorEmail}</span>
                 </div>
-                <div className="user-input mt-3">
-                    <label htmlFor="username" className="form-label">Phone</label>
+                <div className="user-input mt-4">
                     <input
                         type="text"
                         className="form-control"
@@ -61,6 +63,20 @@ export const UserForm = () => {
                         onChange={onInputChange}
                     />
                     <span className='error-span'>{formError.errorPhone}</span>
+                </div>
+                <div className="user-input mt-4">
+                    <label className="custom-checkbox scale yellow medium">
+                        <input
+                            type="checkbox"
+                            id="check-agree"
+                        />
+                        <span className="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z"></path>
+                            </svg>
+                        </span>
+                    </label>
+                    <label htmlFor="check-agree" className="form-label ms-3">I agree to receive an email/sms with my video</label>
                 </div>
             </div>
         </>

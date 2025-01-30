@@ -1,3 +1,9 @@
+:root {
+    --small: 1rem;
+    --medium: 2rem;
+    --large: 3rem;
+}
+
 .player-section .buttons-container {
     position: relative;
 }
@@ -29,8 +35,98 @@
     width: 650px;
 }
 
-.player-section  .title-content .title-2 h2 {
+.player-section .title-content .title-2 h2 {
     color: var(--primary);
     line-height: 0.8em;
 }
 
+.user-section .user-form-content .user-input input {
+    background-color: transparent;
+    border: 3px solid var(--primary);
+    color: var(--light);
+    font-family: "Cragres", Times, serif;
+    font-size: 2.3rem;
+    padding: 0.5rem 2.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-section .user-form-content .user-input input:focus {
+    animation: inputMove 0.5s ease;
+    border: 5px solid var(--primary);
+}
+
+.user-section .user-form-content .user-input input::placeholder {
+    color: var(--light);
+}
+
+.custom-checkbox {
+    display: inline-flex;
+}
+
+.custom-checkbox input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.custom-checkbox .icon {
+    cursor: pointer;
+    width: var(--small);
+    height: val(--small);
+    border: 3px solid var(--primary);
+    border-radius: 0.25rem;
+    transition: 0.3s ease;
+}
+
+.custom-checkbox .icon svg {
+    transition: 0.3s ease;
+}
+
+.custom-checkbox input:not(:checked)~.icon svg {
+    opacity: 0;
+}
+
+.custom-checkbox.scale input:not(:checked)~.icon svg {
+    transform: scale(2);
+}
+
+.custom-checkbox.yellow svg {
+    fill: #19FF16;
+}
+
+.custom-checkbox.yellow input:checked~.icon {
+    border-color: var(--primary);
+}
+
+.custom-checkbox.yellow:hover .icon {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.custom-checkbox.small .icon {
+    height: var(--small);
+    width: var(--small);
+}
+
+.custom-checkbox.medium .icon {
+    height: var(--medium);
+    width: var(--medium);
+}
+
+.custom-checkbox.large .icon {
+    height: var(--large);
+    width: var(--large);
+}
+
+@keyframes inputMove {
+    0% {
+        padding-left: 2.5rem;
+    }
+
+    50% {
+        padding-left: 0.5rem;
+    }
+
+    100% {
+        padding-left: 2.5rem;
+    }
+}
