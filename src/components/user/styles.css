@@ -25,13 +25,27 @@
     justify-content: center;
 }
 
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item {
+    align-items: center;
+    display: flex;
+}
+
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-image {
+    width: 125px;
+    z-index: 1;
+}
+
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content {
+    margin-left: -1rem;
+}
+
 .player-section .title-absolute {
     align-items: center;
     display: flex;
     justify-content: center;
     left: calc(50% - 325px);
     position: absolute;
-    top: -51px;
+    top: -45px;
     width: 650px;
 }
 

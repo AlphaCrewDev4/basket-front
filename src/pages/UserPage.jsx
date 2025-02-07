@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
-import { pageLinks } from '../utils/constants';
 import { UserForm } from '../components/user/UserForm';
 import './styles.css';
 
@@ -15,6 +13,8 @@ export const UserPage = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="border-general-section">
+                                    <div className="square-absolute square-left"></div>
+                                    <div className="square-absolute square-right"></div>
                                     <motion.div
                                         animate={{ opacity: 1 }}
                                         initial={{ opacity: 0 }}

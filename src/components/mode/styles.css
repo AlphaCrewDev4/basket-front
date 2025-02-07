@@ -1,0 +1,70 @@
+.principal-section .mode-section {
+    position: relative;
+    width: 100%;
+}
+
+.principal-section .mode-section .title-content h2 {
+    color: var(--primary);
+}
+
+.principal-section .mode-section .mode-content {
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.principal-section .mode-section .mode-content .square-absolute {
+    border: 8px solid var(--primary);
+    border-bottom: none;
+    content: "";
+    height: 3rem;
+    position: absolute;
+    top: -6px;
+    width: 3rem;
+}
+
+.principal-section .mode-section .mode-content .square-absolute.square-left {
+    border-right: none;
+    left: -6px;
+}
+
+.principal-section .mode-section .mode-content .square-absolute.square-right {
+    border-left: none;
+    right: -6px;
+}
+
+.principal-section .mode-section .mode-content .mode-content-item {
+    position: relative;
+    width: 40%;
+}
+
+.principal-section .mode-section .mode-content .mode-content-item.item-second {
+    border: 4px solid var(--primary);
+    padding: 2rem 3rem;
+    width: 60%;
+}
+
+.principal-section .mode-section .mode-content .button-section {
+    gap: 2rem;
+}
+
+.principal-section .mode-section .mode-content .button-section .button-content button {
+    font-size: 28px;
+}
+
+.principal-section .mode-section .mode-content .mode-content-list .list-item {
+    border: 4px solid transparent;
+    border-right: none;
+    font-size: 24px;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.principal-section .mode-section .mode-content .mode-content-list .list-item.active {
+    border-color: var(--primary);
+}
+
+.principal-section .mode-section .mode-content .mode-content-list .list-item p {
+    margin: 0;
+}

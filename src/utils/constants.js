@@ -5,27 +5,29 @@ export const pageLinks = {
     ready: '/ready',
     instructionPage: '/instruction',
     playerPage: '/player',
+    playerDataPage: '/player-data',
     configurationPlayerPage: '/configuration-player',
     userPage: '/user',
     selectTeamPage: '/select-team',
     preGamePage: '/pre-game',
+    modePage: '/mode'
 }
 
 export const instructionsList = [
     {
         image: 'https://placehold.co/400x100',
         title: 'The instruction are simple',
-        text: 'When the hoops screen shows your assigned color, score as much as you can',
+        text: `When the hoop's screen shows your assigned color, score as much as you can`,
     },
     {
         image: 'https://placehold.co/400x100',
-        title: 'Lorem',
-        text: 'Lorem ipsum dolor si amet, lorem ipsum dolor si amet.',
+        title: 'The instruction are simple',
+        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded.`,
     },
     {
         image: 'https://placehold.co/400x100',
-        title: 'Lorem 2',
-        text: 'Lorem ipsum dolor si amet, lorem ipsum dolor si amet 2.',
+        title: 'The instruction are simple',
+        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color!`,
         last: true,
     },
 ];
@@ -99,6 +101,36 @@ export const usersListTeam = [
         name: 'Name 6',
         image: '/images/team-blue-3.png',
         team: 'Blue'
+    },
+];
+
+export const modeList = [
+    {
+        id: 0,
+        name: 'Solo',
+        image: 'https://placehold.co/400x300',
+        difficulties: [
+            'Normal1',
+            'Mayhem',
+        ]
+    },
+    {
+        id: 1,
+        name: 'Multipleyer - Competitive Up to X players',
+        image: 'https://placehold.co/400x300',
+        difficulties: [
+            'Normal2',
+            'Mayhem',
+        ]
+    },
+    {
+        id: 2,
+        name: 'Multipleyer - Competitive Up to X players',
+        image: 'https://placehold.co/400x300',
+        difficulties: [
+            'Normal3',
+            'Mayhem',
+        ]
     },
 ];
 

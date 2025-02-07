@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
-import { UserButtons } from '../components/user/UserButtons';
+import { UserButtonsData } from '../components/user/UserButtonsData';
 
-export const PlayerPage = () => {
+export const PlayerDataPage = () => {
     return (
         <AppLayout>
             <section className='principal-section second-bg'>
@@ -37,7 +37,7 @@ export const PlayerPage = () => {
                                             <p>We'll use this photo for your player profile. Pick a player for strike a pose fo the camara!</p>
                                         </div>
                                     </motion.div>
-                                    <UserButtons />
+                                    <UserButtonsData />
                                 </div>
                             </div>
                         </div>

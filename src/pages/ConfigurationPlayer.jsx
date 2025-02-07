@@ -14,6 +14,8 @@ export const ConfigurationPLayer = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="border-general-section">
+                                    <div className="square-absolute square-left"></div>
+                                    <div className="square-absolute square-right"></div>
                                     <motion.div
                                         animate={{ opacity: 1 }}
                                         initial={{ opacity: 0 }}
@@ -35,11 +37,9 @@ export const ConfigurationPLayer = () => {
                                                     initial={{ opacity: 0 }}
                                                     transition={{ duration: 2 }}
                                                 >
-                                                    <div className="text-content">
-                                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                                            Possimus fugiat vitae, voluptate beatae fuga, quasi atque 
-                                                            hic vel nemo vero velit impedit iste? Dolor voluptatem incidunt 
-                                                            repellendus beatae quos temporibus?</p>
+                                                    <div className="text-content text-center">
+                                                        <p className='mb-5'>We can also send you a personalized video of the match!</p>
+                                                        <p>We just need your email/phone number</p>
                                                     </div>
                                                 </motion.div>
                                             </div>
@@ -65,7 +65,7 @@ export const ConfigurationPLayer = () => {
                                     >
                                         <div className="button-section">
                                             <div className="button-content">
-                                                <Link to={pageLinks.playerPage}>Link</Link>
+                                                <Link to={pageLinks.playerPage}>Skip</Link>
                                             </div>
                                             <div className="button-content">
                                                 <Link to={pageLinks.playerPage}>Set up profile</Link>

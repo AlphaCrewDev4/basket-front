@@ -6,6 +6,8 @@ import {
     ConfigurationPLayer,
     HomePage,
     InstructionPage,
+    ModePage,
+    PlayerDataPage,
     PlayerPage,
     PreGamePage,
     SelectTeamPage,
@@ -23,6 +25,8 @@ export const AppRouter = () => {
             <Route path={pageLinks.userPage} element={<UserPage />} />
             <Route path={pageLinks.selectTeamPage} element={<SelectTeamPage />} />
             <Route path={pageLinks.preGamePage} element={<PreGamePage />} />
+            <Route path={pageLinks.modePage} element={<ModePage />} />
+            <Route path={pageLinks.playerDataPage} element={<PlayerDataPage />} />
         </Routes>
     )
 }

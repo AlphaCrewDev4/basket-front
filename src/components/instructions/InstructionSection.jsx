@@ -29,6 +29,8 @@ export const InstructionSection = ({ instruction, increase, decrease, counter })
             <div
                 className="instruction-content border-general-section"
             >
+                <div className="square-absolute square-left"></div>
+                <div className="square-absolute square-right"></div>
                 <motion.div
                     animate={{ opacity: values }}
                     initial={{ opacity: 0 }}
