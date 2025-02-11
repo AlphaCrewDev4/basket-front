@@ -100,3 +100,122 @@
     margin-bottom: 1rem;
     width: 200px;
 }
+
+/*Init Game Section*/
+.init-game-section {
+    padding: 5rem 0;
+    position: absolute;
+    width: 100%;
+}
+
+.init-game-section .init-game-content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.init-game-section .init-game-content::before {
+    background-color: var(--team-green);
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 45%;
+}
+
+.init-game-section .init-game-content::after {
+    background-color: var(--team-blue);
+    bottom: 0;
+    content: "";
+    height: 4px;
+    position: absolute;
+    right: 0;
+    width: 45%;
+}
+
+.init-game-section .init-game-content .square-absolute {
+    border-top: none !important;
+    bottom: -2px;
+    content: "";
+    height: 3rem;
+    position: absolute;
+    width: 3rem;
+}
+
+.init-game-section .init-game-content .square-absolute.square-left {
+    border: 8px solid var(--team-green);
+    border-right: none;
+    left: -6px;
+}
+
+.init-game-section .init-game-content .square-absolute.square-right {
+    border: 8px solid var(--team-blue);
+    border-left: none;
+    right: -6px;
+}
+
+.init-game-section .init-game-content .init-game-item {
+    width: 50%;
+}
+
+.init-game-section .init-game-content .init-game-item .init-game-title {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.init-game-section .init-game-content .init-game-item .init-game-team {
+    margin-top: 1rem;
+    position: relative;
+    top: 89px;
+    width: 100%;
+}
+
+.init-game-section .init-game-content .section-absolute {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.init-game-section .timer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.init-game-section .time-wrapper {
+    position: relative;
+    width: 80px;
+    height: 60px;
+    font-size: 80px;
+    font-family: "Cragres", Times, serif;
+}
+
+.init-game-section .time-wrapper .time {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.init-game-section .time-wrapper .time.up {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.init-game-section .time-wrapper .time.down {
+    opacity: 0;
+    transform: translateY(100%);
+}

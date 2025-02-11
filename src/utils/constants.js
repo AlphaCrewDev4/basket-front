@@ -10,7 +10,8 @@ export const pageLinks = {
     userPage: '/user',
     selectTeamPage: '/select-team',
     preGamePage: '/pre-game',
-    modePage: '/mode'
+    modePage: '/mode',
+    initGamePage: '/init-game',
 }
 
 export const instructionsList = [

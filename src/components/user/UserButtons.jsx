@@ -60,7 +60,7 @@ export const UserButtons = () => {
                             transition={{ duration: 1 }}
                         >
                             <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 5</Link>
+                                <Link to={pageLinks.modePage}>Player 5</Link>
                             </div>
                         </motion.div>
                     </div>
@@ -71,7 +71,7 @@ export const UserButtons = () => {
                             transition={{ duration: 1 }}
                         >
                             <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 6</Link>
+                                <Link to={pageLinks.initGamePage}>Player 6</Link>
                             </div>
                         </motion.div>
                     </div>

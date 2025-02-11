@@ -10,3 +10,4 @@ export * from './UserPage';
 export * from './SelectTeamPage';
 export * from './PreGamePage';
 export * from './ModePage';
+export * from './InitGamePage';
