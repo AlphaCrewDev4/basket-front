@@ -45,7 +45,7 @@ export const CountdownSection = ({ setActiveSection }) => {
     return (
         <CountdownCircleTimer
             isPlaying
-            duration={7}
+            duration={6}
             colors={['#FBCB4F']}
             onComplete={() => {
                 setActiveSection('fight');

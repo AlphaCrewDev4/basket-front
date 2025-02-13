@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { UserButtons } from '../components/user/UserButtons';
+import { PhotoModal } from '../components/modal/PhotoModal';
 
 export const PlayerPage = () => {
     return (
@@ -38,6 +39,9 @@ export const PlayerPage = () => {
                                         </div>
                                     </motion.div>
                                     <UserButtons />
+                                    <div className="modal-content">
+                                        <PhotoModal />
+                                    </div>
                                 </div>
                             </div>
                         </div>

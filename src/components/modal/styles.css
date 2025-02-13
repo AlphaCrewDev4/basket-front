@@ -1,0 +1,39 @@
+.modal.modal-photo .modal-content {
+    background-color: #49A54E;
+    border: none;
+    padding: 2rem 1rem;
+}
+
+.modal-photo .modal-photo-body {
+    display: flex;
+}
+
+.modal-photo .modal-photo-body img {
+    width: 100%;
+}
+
+.modal-photo .modal-photo-body .modal-photo-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+}
+
+.modal-photo .modal-photo-body .modal-photo-item .modal-photo-title h2 {
+    font-family: "Cragres", Times, serif;
+}
+
+.modal-photo .modal-photo-body .modal-photo-item .modal-photo-image {
+    width: 100%;
+}
+
+.modal-photo .modal-photo-body .modal-photo-item .modal-photo-text {
+    font-family: 'Glitch Slap', Times, serif;
+    font-size: 20px;
+    line-height: 1.2em;
+}
+
+.modal-photo .modal-photo-body .modal-photo-item .modal-photo-icon {
+    margin-top: 1rem;
+}
