@@ -52,7 +52,7 @@ export const UserButtonsData = () => {
                                 <img src='/images/team-green-1.png' />
                             </div>
                             <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 5</Link>
+                                <Link to={pageLinks.instructionPageV2}>Player 5</Link>
                             </div>
                         </div>
                         <div className="buttons-item">

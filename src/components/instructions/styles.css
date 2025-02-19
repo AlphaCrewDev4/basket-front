@@ -51,3 +51,181 @@
 .instruction-section .button-content.button-left a {
     clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 20% 100%, 0% 50%);
 }
+
+/*Instructions section v2*/
+.instruction__section {
+    position: relative;
+    width: 100%;
+}
+
+.instruction__section .instruction__body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.instruction__section .instruction__body .instruction__left {
+    width: 12%;
+}
+
+.instruction__section .instruction__body .instruction__left .instruction__buttons,
+.instruction__section .instruction__body .instruction__left .instruction__buttons .instruction__button {
+    width: 100%;
+}
+
+.instruction__section .instruction__body .instruction__left .instruction__buttons .instruction__button button {
+    background-color: transparent;
+    border: none !important;
+    color: var(--light);
+    display: block;
+    font-size: 20px;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.instruction__section .instruction__body .instruction__left .instruction__buttons .instruction__button.active button,
+.instruction__section .instruction__body .instruction__left .instruction__buttons .instruction__button button:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.instruction__section .instruction__body .instruction__right {
+    width: 88%;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item {
+    width: 100%;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__options {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__options .instruction__option {
+    border: 3px solid #999;
+    border-bottom: none !important;
+    cursor: pointer;
+    padding: 4px 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__options .instruction__option.active,
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__options .instruction__option:hover {
+    border: 3px solid var(--primary);
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__options .instruction__option p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__content {
+    background: linear-gradient(-45deg, var(--primary) calc(0.707*var(--clip-size) + var(--clip-border)), #0000 0) border-box;
+    border: 3px solid var(--primary);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%, 0 100%);
+    padding: 2.5rem 3rem;
+    position: relative;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__slider__item .title-content {
+    width: 60%;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__slider__item .title-content .title-2 h2 {
+    color: var(--primary);
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__slider__item .slider__description {
+    font-size: 20px;
+}
+
+.instruction__section .instruction__body .instruction__right .alice-carousel__prev-btn,
+.instruction__section .instruction__body .instruction__right .alice-carousel__next-btn {
+    position: absolute;
+    top: calc(50% - 45px);
+    width: auto;
+}
+
+.instruction__section .instruction__body .instruction__right .alice-carousel__prev-btn {
+    left: -2.5rem;
+}
+
+.instruction__section .instruction__body .instruction__right .alice-carousel__next-btn {
+    right: -2.5rem;
+}
+
+.instruction__section .instruction__body .instruction__right .alice-carousel__prev-btn p,
+.instruction__section .instruction__body .instruction__right .alice-carousel__next-btn p {
+    align-items: center;
+    color: var(--primary);
+    display: flex;
+    font-family: cursive;
+    font-size: 60px;
+    font-weight: bold;
+    height: 35px;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    width: 35px;
+}
+
+.instruction__section .instruction__body .instruction__right .alice-carousel__prev-btn p:hover,
+.instruction__section .instruction__body .instruction__right .alice-carousel__next-btn p:hover {
+    color: var(--secondary);
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__difficulty,
+.instruction__section .instruction__body .instruction__right .instruction__difficulty .instruction__difficulty__content {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__difficulty {
+    gap: 5rem;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__difficulty .instruction__difficulty__content p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__difficulty .instruction__difficulty__content .button-content button {
+    background: linear-gradient(-45deg, #5E5D61 calc(0.707*25px + var(--clip-border)), #0000 0) border-box;
+    border: 3px solid #5E5D61 !important;
+    color: var(--light);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+    font-size: 24px;
+    padding: 1rem 2rem;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__difficulty .instruction__difficulty__content .button-content.active button {
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    border-color: var(--btn-primary) !important;
+    color: var(--dark);
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__content .square-absolute {
+    border: 8px solid var(--primary);
+    border-bottom: none;
+    content: "";
+    height: 3rem;
+    position: absolute;
+    top: -6px;
+    width: 3rem;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__content .square-absolute.square-left {
+    border-right: none;
+    left: -6px;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__item .instruction__content .square-absolute.square-right {
+    border-left: none;
+    right: -6px;
+}

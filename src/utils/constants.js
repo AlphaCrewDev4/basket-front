@@ -4,6 +4,7 @@ export const pageLinks = {
     homePage: '/',
     ready: '/ready',
     instructionPage: '/instruction',
+    instructionPageV2: '/instruction-v2',
     playerPage: '/player',
     playerDataPage: '/player-data',
     configurationPlayerPage: '/configuration-player',
@@ -30,6 +31,239 @@ export const instructionsList = [
         title: 'The instruction are simple',
         text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color!`,
         last: true,
+    },
+];
+
+export const instructionsListV2 = [
+    {
+        id: 'abc1',
+        name: 'Game 1',
+        types: [
+            {
+                typeName: 'Team Work 1',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 1`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 1`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 1`,
+                    },
+                ],
+            },
+            {
+                typeName: 'Competitive 1',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 1`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 1`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 1`,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'abc2',
+        name: 'Game 2',
+        types: [
+            {
+                typeName: 'Team Work 2',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 2`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 2`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 2`,
+                    },
+                ],
+            },
+            {
+                typeName: 'Competitive 2',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 2`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 2`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 2`,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'abc3',
+        name: 'Game 3',
+        types: [
+            {
+                typeName: 'Team Work 3',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 3`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 3`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 3`,
+                    },
+                ],
+            },
+            {
+                typeName: 'Competitive 3',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 3`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 3`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 3`,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'abc4',
+        name: 'Game 4',
+        types: [
+            {
+                typeName: 'Team Work 4',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 4`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 4`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 4`,
+                    },
+                ],
+            },
+            {
+                typeName: 'Competitive 4',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 4`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 4`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 4`,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'abc5',
+        name: 'Game 5',
+        types: [
+            {
+                typeName: 'Team Work 5',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 5`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 5`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 5`,
+                    },
+                ],
+            },
+            {
+                typeName: 'Competitive 5',
+                instructions: [
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `When the hoop's screen shows your assigned color, score as much as you can 5`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 5`,
+                    },
+                    {
+                        image: 'https://placehold.co/400x100',
+                        title: 'The instruction are simple',
+                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 5`,
+                    },
+                ],
+            },
+        ],
     },
 ];
 

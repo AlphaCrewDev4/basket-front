@@ -35,6 +35,10 @@
     --clr-1: #6420aa;
     --clr-2: #fab812;
     --clr-3: #FBCB4F;
+    --clip-border: 3px;
+    /* border */
+    --clip-size: 50px;
+    /* size of the cut */
 }
 
 /*General Styles*/
@@ -79,6 +83,7 @@
 
 .title-content .title-2 h2 {
     font-size: 3rem;
+    text-shadow: 0 0 10px var(--primary);
 }
 
 .text-content p {

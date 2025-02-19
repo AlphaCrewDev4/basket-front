@@ -3,6 +3,7 @@
 export * from './HomePage';
 export * from './ActionPage';
 export * from './InstructionPage';
+export * from './InstructionPagev2';
 export * from './PlayerPage';
 export * from './PlayerDataPage';
 export * from './ConfigurationPlayer';

@@ -7,6 +7,7 @@ import {
     HomePage,
     InitGamePage,
     InstructionPage,
+    InstructionPagev2,
     ModePage,
     PlayerDataPage,
     PlayerPage,
@@ -21,6 +22,7 @@ export const AppRouter = () => {
             <Route path={pageLinks.homePage} element={<HomePage />} />
             <Route path={pageLinks.ready} element={<ActionPage />} />
             <Route path={pageLinks.instructionPage} element={<InstructionPage />} />
+            <Route path={pageLinks.instructionPageV2} element={<InstructionPagev2 />} />
             <Route path={pageLinks.playerPage} element={<PlayerPage />} />
             <Route path={pageLinks.configurationPlayerPage} element={<ConfigurationPLayer />} />
             <Route path={pageLinks.userPage} element={<UserPage />} />

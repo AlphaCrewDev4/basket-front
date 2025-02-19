@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { usersList } from '../../utils/constants';
+import { pageLinks, usersList } from '../../utils/constants';
 import './styles.css';
+import { Link } from 'react-router';
 
 export const SelectSection = () => {
 
@@ -69,6 +70,14 @@ export const SelectSection = () => {
                         </div>
                     ))
                 }
+                <div className="button-section pt-3 mt-5">
+                    <div className="button-content button-left">
+                        <Link to={pageLinks.playerPage}>Back</Link>
+                    </div>
+                    <div className="button-content">
+                        <Link to={pageLinks.playerPage}>Save</Link>
+                    </div>
+                </div>
             </div>
         </>
     )

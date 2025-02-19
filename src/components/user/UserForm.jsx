@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router';
+import { pageLinks } from '../../utils/constants';
 import './styles.css';
 
 export const UserForm = () => {
@@ -84,6 +86,14 @@ export const UserForm = () => {
                             </span>
                         </label>
                         <label htmlFor="check-agree" className="form-label ms-3">I agree to receive an email/sms with my video</label>
+                    </div>
+                    <div className="button-section pt-3 mt-5">
+                        <div className="button-content button-left">
+                            <Link to={pageLinks.playerPage}>Back</Link>
+                        </div>
+                        <div className="button-content">
+                            <Link to={pageLinks.playerPage}>Save</Link>
+                        </div>
                     </div>
                 </motion.div>
             </div>
