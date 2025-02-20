@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { pageLinks } from '../../utils/constants';
+import { validateEmail, validatePhone } from '../helpers/validateFunctions';
+import { AppContext } from '../../context/AppContext';
 import './styles.css';
 
-export const UserForm = () => {
+export const UserForm = ({ userData }) => {
+
+    const { setUsersData } = useContext(AppContext);
+    let navigate = useNavigate();
 
     const [formOptions, setFormOptions] = useState({
         name: '',
         email: '',
         phone: '',
+        checked: false,
     });
 
     const [formError, setFormError] = useState({
@@ -18,11 +24,82 @@ export const UserForm = () => {
         errorPhone: '',
     });
 
+    useEffect(() => {
+        if (userData.userExist) {
+            setFormOptions({
+                name: userData.name,
+                email: userData.email,
+                phone: userData.phone,
+                checked: userData.checked,
+            });
+        }
+    }, [userData]);
+
     const onInputChange = ({ target }) => {
-        setFormOptions({
-            ...formOptions,
+        setFormOptions(val => ({
+            ...val,
             [target.name]: target.value,
+        }));
+    }
+
+    const onCheckChange = ({target}) => {
+        setFormOptions(val => ({
+            ...val,
+            checked: target.checked,
+        }));
+    }
+
+    const resetFormError = () => {
+        setFormError({
+            errorName: '',
+            errorEmail: '',
+            errorPhone: '',
         });
+    }
+
+    const onFormSubmit = () => {
+        resetFormError();
+        let hasError = false;
+        let validateFormPhone = validatePhone(formOptions.phone);
+        let validateFormEmail = validateEmail(formOptions.email);
+
+        if (formOptions.name.length < 2 || formOptions.name.length > 15) {
+            setFormError(val => ({
+                ...val,
+                errorName: 'The name is incorrect',
+            }));
+            hasError = true;
+        }
+
+        if (!validateFormPhone) {
+            setFormError(val => ({
+                ...val,
+                errorPhone: 'The phone is incorrect',
+            }));
+            hasError = true;
+        }
+
+        if (!validateFormEmail) {
+            setFormError(val => ({
+                ...val,
+                errorEmail: 'The email is incorrect',
+            }));
+            hasError = true;
+        }
+
+        if (hasError) {
+            return;
+        }
+
+        setUsersData(val => ({
+            ...val,
+            [userData.userId]: {
+                ...val[userData.userId],
+                ...formOptions,
+            }
+        }));
+
+        navigate(pageLinks.playerPage);
     }
 
     return (
@@ -78,6 +155,8 @@ export const UserForm = () => {
                             <input
                                 type="checkbox"
                                 id="check-agree"
+                                onChange={onCheckChange}
+                                checked={formOptions.checked}
                             />
                             <span className="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -89,10 +168,12 @@ export const UserForm = () => {
                     </div>
                     <div className="button-section pt-3 mt-5">
                         <div className="button-content button-left">
-                            <Link to={pageLinks.playerPage}>Back</Link>
+                            <button
+                                onClick={onFormSubmit}
+                            >Save</button>
                         </div>
                         <div className="button-content">
-                            <Link to={pageLinks.playerPage}>Save</Link>
+                            <Link to={pageLinks.playerPage}>Back</Link>
                         </div>
                     </div>
                 </motion.div>

@@ -1,80 +1,73 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { pageLinks } from '../../utils/constants';
+import { AppContext } from '../../context/AppContext';
 import './styles.css';
 
 export const UserButtons = () => {
+
+    const { usersData } = useContext(AppContext);
+
+    const [buttonCounter, setButtonCounter] = useState(6);
+    const [buttonsData, setButtonsData] = useState([]);
+
+    useEffect(() => {
+        generateButtons();
+    }, []);
+
+    const generateButtons = () => {
+        let buttonsTemp = [];
+        for (let i = 0; i < buttonCounter; i++) {
+            let butttonName = `Player ${i + 1}`;
+            let userExist = false;
+
+            if (usersData[`user${i}`]) {
+                butttonName = usersData[`user${i}`].name;
+                userExist = true;
+            }
+
+            let button = {
+                id: i,
+                butttonName,
+                link: `${pageLinks.userPage}?user=${i}`,
+                image: 'https://placehold.co/100x100',
+                userExist,
+            }
+
+            buttonsTemp = [...buttonsTemp, button];
+        }
+        setButtonsData([
+            ...buttonsTemp,
+        ]);
+    }
+
     return (
         <>
-            <div className="buttons-container">
+            <div className="buttons-container buttons-data">
                 <div className="buttons-body">
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.userPage}>Player 1</Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.selectTeamPage}>Player 2</Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.preGamePage}>Player 3</Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.playerDataPage}>Player 4</Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.modePage}>Player 5</Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                    <div className="buttons-item">
-                        <motion.div
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            <div className="button-content button-outline">
-                                <Link to={pageLinks.initGamePage}>Player 6</Link>
-                            </div>
-                        </motion.div>
-                    </div>
+                    <motion.div
+                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0 }}
+                        transition={{ duration: 1 }}
+                        className='buttons-body'
+                    >
+                        {
+                            buttonsData.map(item => (
+                                <div className="buttons-item" key={item.id}>
+                                    {
+                                        item.userExist
+                                        && <div className="button-image">
+                                            <img src={item.image} />
+                                        </div>
+                                    }
+                                    <div className="button-content button-outline">
+                                        <Link to={item.link}>{item.butttonName}</Link>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </motion.div>
                 </div>
             </div>
         </>

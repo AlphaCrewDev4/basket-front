@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { UserForm } from '../components/user/UserForm';
+import { useSearchParams } from 'react-router';
+import { AppContext } from '../context/AppContext';
 import './styles.css';
 
 export const UserPage = () => {
+
+    const [searchParams] = useSearchParams();
+    const { usersData } = useContext(AppContext);
+    const [userData, setUserData] = useState({});
+    const [activeNumber, setActiveNumber] = useState(0);
+
+    useEffect(() => {
+        let user = searchParams.get('user') || '0';
+        if (usersData[`user${user}`]) {
+            setUserData({
+                ...usersData[`user${user}`],
+                userId: `user${user}`,
+                userExist: true,
+            })
+        } else {
+            setUserData({
+                userId: `user${user}`,
+                userExist: false,
+            });
+        }
+        setActiveNumber(Number(user));
+    }, []);
+
     return (
         <AppLayout>
             <section className='principal-section second-bg'>
@@ -23,7 +48,7 @@ export const UserPage = () => {
                                     >
                                         <div className="title-content">
                                             <div className="title-2 text-center">
-                                                <h2>PLayer 1
+                                                <h2>PLayer {activeNumber + 1}
                                                 </h2>
                                             </div>
                                         </div>
@@ -43,7 +68,9 @@ export const UserPage = () => {
                                                 </motion.div>
                                             </div>
                                             <div className="col-7 d-flex justify-content-center align-items-center">
-                                                <UserForm />
+                                                <UserForm
+                                                    userData={userData}
+                                                />
                                             </div>
                                         </div>
                                     </div>

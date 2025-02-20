@@ -44,6 +44,14 @@
 
 .team-configuration-section .select-team-body .select-team-item .select-team-content .select-team-image {
     width: 125px;
+    z-index: 2;
+}
+
+.team-configuration-section .select-team-body .select-team-item .select-team-content .select-team-image img {
+    aspect-ratio: 1 / 1;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .team-configuration-section .select-team-body .select-team-item .select-team-content .select-team-name {
@@ -52,7 +60,9 @@
     color: var(--dark);
     font-family: "Cragres", Times, serif;
     font-size: 22px;
+    left: -0.5rem;
     padding: 0.5rem 1rem;
+    position: relative;
     width: calc(100% - 125px);
 }
 
@@ -99,6 +109,20 @@
     margin: 0 auto;
     margin-bottom: 1rem;
     width: 200px;
+}
+
+.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item img {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.green-team img {
+    border: 3px solid var(--team-green);
+}
+
+.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.blue-team img {
+    border: 3px solid var(--team-blue);
 }
 
 /*Init Game Section*/

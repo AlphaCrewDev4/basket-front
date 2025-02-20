@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { ConfirmationSection } from '../components/team/ConfirmationSection';
-import './styles.css';
 import { pageLinks } from '../utils/constants';
 import { Link } from 'react-router';
+import './styles.css';
 
 export const PreGamePage = () => {
     return (
@@ -52,11 +52,11 @@ export const PreGamePage = () => {
                                         className='content-absolute mt-5'
                                     >
                                         <div className="button-section">
-                                            <div className="button-content button-left">
-                                                <Link to={pageLinks.playerPage}>Back</Link>
-                                            </div>
                                             <div className="button-content">
-                                                <Link to={pageLinks.playerPage}>Ready</Link>
+                                                <Link to={pageLinks.initGamePage}>Ready</Link>
+                                            </div>
+                                            <div className="button-content button-left">
+                                                <Link to={pageLinks.selectTeamPage}>Back</Link>
                                             </div>
                                         </div>
 

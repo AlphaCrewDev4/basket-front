@@ -9,6 +9,7 @@ export const InstructionBody = () => {
     const [animationValue, setAnimationValue] = useState(1);
 
     const onChangeInstruction = ({ instruction }) => {
+        console.log(instruction)
         setAnimationValue(0);
         setTimeout(() => {
             setActiveInstruction(instruction);

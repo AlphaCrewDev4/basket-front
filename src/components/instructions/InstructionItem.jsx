@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { InstructionSlider } from './InstructionSlider';
-import { Link } from 'react-router';
-import { pageLinks } from '../../utils/constants';
+import { difficultiesList, pageLinks } from '../../utils/constants';
+import { useNavigate } from 'react-router';
+import { AppContext } from '../../context/AppContext';
 
 export const InstructionItem = ({ instruction }) => {
 
+    const { setAppData } = useContext(AppContext);
+    let navigate = useNavigate();
     const [activeItem, setActiveItem] = useState(instruction.types[0]);
     const [animationValue, setAnimationValue] = useState(1);
+    const [difficulty, setDifficulty] = useState(1);
 
     useEffect(() => {
         setActiveItem(instruction.types[0]);
@@ -19,6 +23,26 @@ export const InstructionItem = ({ instruction }) => {
             setActiveItem(item);
             setAnimationValue(1);
         }, [1000]);
+    }
+
+    const onSelectOption = () => {
+        let activeData = {
+            gameId: instruction.id,
+            gameName: instruction.name,
+            gameType: activeItem.typeName,
+            gameDifficulty: difficulty,
+        }
+
+        setAppData(val => ({
+            ...val,
+            gameMode: activeData,
+        }));
+
+        navigate(pageLinks.configurationPlayerPage);
+    }
+
+    const onChangeDifficulty = (difficulty) => {
+        setDifficulty(difficulty);
     }
 
     return (
@@ -54,24 +78,22 @@ export const InstructionItem = ({ instruction }) => {
                 <div className="instruction__difficulty">
                     <div className="instruction__difficulty__content">
                         <p>Difficulty Level:</p>
-                        <div className="button-content active">
-                            <button>1</button>
-                        </div>
-                        <div className="button-content">
-                            <button>1</button>
-                        </div>
-                        <div className="button-content">
-                            <button>1</button>
-                        </div>
-                        <div className="button-content">
-                            <button>1</button>
-                        </div>
-                        <div className="button-content">
-                            <button>1</button>
-                        </div>
+                        {
+                            difficultiesList.map(item => (
+                                <div className={
+                                    item.id == difficulty
+                                    ? 'button-content active'
+                                    : 'button-content'
+                                } key={item.id}>
+                                    <button
+                                        onClick={() => onChangeDifficulty(item.id)}
+                                    >{item.name}</button>
+                                </div>
+                            ))
+                        }
                     </div>
                     <div className="button-content">
-                        <Link to={pageLinks.playerPage}>Select</Link>
+                        <button onClick={onSelectOption}>Select</button>
                     </div>
                 </div>
             </div>

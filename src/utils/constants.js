@@ -40,7 +40,7 @@ export const instructionsListV2 = [
         name: 'Game 1',
         types: [
             {
-                typeName: 'Team Work 1',
+                typeName: 'Co-op 1',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
@@ -86,7 +86,7 @@ export const instructionsListV2 = [
         name: 'Game 2',
         types: [
             {
-                typeName: 'Team Work 2',
+                typeName: 'Co-op 2',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
@@ -132,7 +132,7 @@ export const instructionsListV2 = [
         name: 'Game 3',
         types: [
             {
-                typeName: 'Team Work 3',
+                typeName: 'Co-op 3',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
@@ -178,7 +178,7 @@ export const instructionsListV2 = [
         name: 'Game 4',
         types: [
             {
-                typeName: 'Team Work 4',
+                typeName: 'Co-op 4',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
@@ -224,7 +224,7 @@ export const instructionsListV2 = [
         name: 'Game 5',
         types: [
             {
-                typeName: 'Team Work 5',
+                typeName: 'Co-op 5',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
@@ -264,6 +264,29 @@ export const instructionsListV2 = [
                 ],
             },
         ],
+    },
+];
+
+export const difficultiesList = [
+    {
+        id: 1,
+        name: '1',
+    },
+    {
+        id: 2,
+        name: '2',
+    },
+    {
+        id: 3,
+        name: '3',
+    },
+    {
+        id: 4,
+        name: '4',
+    },
+    {
+        id: 5,
+        name: '5',
     },
 ];
 

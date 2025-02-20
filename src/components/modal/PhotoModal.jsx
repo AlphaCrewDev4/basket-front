@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { CountdownSection } from '../countdown/CountdownSection';
 import './styles.css';
+import { Link, useNavigate } from 'react-router';
+import { pageLinks } from '../../utils/constants';
+import { AppContext } from '../../context/AppContext';
 
 export const PhotoModal = () => {
 
     const [modalShow, setModalShow] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [textError, setTextError] = useState('')
+
+    const { usersData } = useContext(AppContext);
+    let navigate = useNavigate();
 
     const onHide = () => {
         setModalShow(false);
@@ -16,11 +23,26 @@ export const PhotoModal = () => {
         setModalShow(true);
     }
 
+    const onContinue = () => {
+        let keys = Object.keys(usersData);
+        if (keys.length < 2) {
+            setTextError('You must enter two users');
+            return;
+        }
+        navigate(pageLinks.selectTeamPage);
+    }
+
     return (
         <>
+            <div className="text-error text-center mt-3">
+                <p>{textError}</p>
+            </div>
             <div className="button-section mt-5">
                 <div className="button-content">
                     <button onClick={onShowModal}>Open Modal</button>
+                </div>
+                <div className="button-content">
+                    <button onClick={onContinue}>Continue</button>
                 </div>
             </div>
             <Modal

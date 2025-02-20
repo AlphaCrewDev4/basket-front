@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { pageLinks } from '../utils/constants';
+import { AppContext } from '../context/AppContext';
 import './styles.css';
 
 export const ConfigurationPLayer = () => {
+
+    const { appData } = useContext(AppContext);
+
+    console.log(appData);
+
     return (
         <AppLayout>
             <section className='principal-section second-bg'>

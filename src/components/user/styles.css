@@ -13,16 +13,21 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2rem 6rem;
 }
 
 .player-section .buttons-container .buttons-body .buttons-item {
-    width: calc(50% - 1rem);
+    width: calc(50% - 5rem);
 }
 
 .player-section .buttons-container .buttons-body .buttons-item .button-content {
     display: flex;
     justify-content: center;
+}
+
+.player-section .buttons-container .buttons-body .buttons-item .button-content a {
+    text-align: center;
+    width: 100%;
 }
 
 .player-section .buttons-container.buttons-data .buttons-body .buttons-item {
@@ -35,8 +40,17 @@
     z-index: 1;
 }
 
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-image img {
+    aspect-ratio: 1 / 1;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    object-fit: cover;
+    width: 125px;
+}
+
 .player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content {
     margin-left: -1rem;
+    width: 100%;
 }
 
 .player-section .title-absolute {
