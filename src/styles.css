@@ -266,6 +266,28 @@
     transform: translateY(100%);
 }
 
+.body .general-button-back {
+    left: 0;
+    position: absolute;
+    top: -4rem;
+}
+
+.body .general-button-back a {
+    color: var(--light);
+    font-family: "Cragres", Times, serif;
+    font-size: 32px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.body .general-button-back a:hover {
+    color: var(--primary);
+}
+
+.body .general-button-back a span {
+    font-family: cursive;
+}
+
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;

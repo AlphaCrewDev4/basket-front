@@ -5,6 +5,10 @@ export const TeamReadySection = () => {
 
     const [activeSection, setActiveSection] = useState('init');
 
+    const changeState = () => {
+        setActiveSection('fight');
+    }
+
     useEffect(() => {
         setTimeout(() => {
             setActiveSection('countdown');
@@ -33,16 +37,16 @@ export const TeamReadySection = () => {
                 {
                     activeSection == 'init'
                         ? <div className="vs-image">
-                            <img src='/images/vs-icon.PNG' />
+                            <img src='/images/vs-icon.png' />
                         </div>
                         : activeSection == 'countdown'
                             ? <div className="countdown-section">
                                 <CountdownSection
-                                    setActiveSection={setActiveSection}
+                                    onCompleteFn={changeState}
                                 />
                             </div>
                             : <div className="fight-image">
-                                <img src='/images/fight-icon.PNG' />
+                                <img src='/images/fight-icon.png' />
                             </div>
                 }
             </div>

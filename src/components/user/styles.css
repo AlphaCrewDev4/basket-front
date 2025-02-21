@@ -53,6 +53,13 @@
     width: 100%;
 }
 
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content.button-outline a {
+    background: linear-gradient(-45deg, var(--primary) calc(0.707*25px + var(--clip-border)), #0000 0) border-box;
+    border: 3px solid var(--primary) !important;
+    color: var(--light);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+}
+
 .player-section .title-absolute {
     align-items: center;
     display: flex;

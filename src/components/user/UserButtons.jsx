@@ -19,7 +19,7 @@ export const UserButtons = () => {
     const generateButtons = () => {
         let buttonsTemp = [];
         for (let i = 0; i < buttonCounter; i++) {
-            let butttonName = `Player ${i + 1}`;
+            let butttonName = `Add Player`;
             let userExist = false;
 
             if (usersData[`user${i}`]) {
@@ -61,7 +61,11 @@ export const UserButtons = () => {
                                             <img src={item.image} />
                                         </div>
                                     }
-                                    <div className="button-content button-outline">
+                                    <div className={
+                                        !item.userExist
+                                        ? 'button-content button-outline'
+                                        : 'button-content'
+                                    }>
                                         <Link to={item.link}>{item.butttonName}</Link>
                                     </div>
                                 </div>

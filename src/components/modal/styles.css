@@ -25,6 +25,7 @@
 }
 
 .modal-photo .modal-photo-body .modal-photo-item .modal-photo-image {
+    max-width: 400px;
     width: 100%;
 }
 
@@ -35,5 +36,20 @@
 }
 
 .modal-photo .modal-photo-body .modal-photo-item .modal-photo-icon {
+    animation: iconMove 1s infinite ease;
     margin-top: 1rem;
+    position: relative;
+    width: 60px;
+}
+
+@keyframes iconMove {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: -2rem;
+    } 
+    100% {
+        bottom: 0;
+    }
 }

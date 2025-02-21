@@ -206,3 +206,11 @@
     top: 0;
     width: 100%;
 }
+
+.init-game-section .init-game-content .section-absolute .vs-image {
+    width: 250px;
+}
+
+.init-game-section .init-game-content .section-absolute .fight-image {
+    width: 450px;
+}

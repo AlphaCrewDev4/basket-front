@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { Link, useSearchParams } from 'react-router';
+import { pageLinks } from '../utils/constants';
 import { AppLayout } from '../layouts';
 import { UserForm } from '../components/user/UserForm';
-import { useSearchParams } from 'react-router';
 import { AppContext } from '../context/AppContext';
 import './styles.css';
 
@@ -20,11 +21,13 @@ export const UserPage = () => {
                 ...usersData[`user${user}`],
                 userId: `user${user}`,
                 userExist: true,
+                userPosition: Number(user) + 1,
             })
         } else {
             setUserData({
                 userId: `user${user}`,
                 userExist: false,
+                userPosition: Number(user) + 1,
             });
         }
         setActiveNumber(Number(user));
@@ -40,6 +43,12 @@ export const UserPage = () => {
                                 <div className="border-general-section">
                                     <div className="square-absolute square-left"></div>
                                     <div className="square-absolute square-right"></div>
+                                    <div className="general-button-back">
+                                        <Link to={pageLinks.playerPage}>
+                                            <span>{`< `}</span>
+                                            Go Back
+                                        </Link>
+                                    </div>
                                     <motion.div
                                         animate={{ opacity: 1 }}
                                         initial={{ opacity: 0 }}

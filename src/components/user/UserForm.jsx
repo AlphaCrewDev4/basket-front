@@ -5,12 +5,14 @@ import { pageLinks } from '../../utils/constants';
 import { validateEmail, validatePhone } from '../helpers/validateFunctions';
 import { AppContext } from '../../context/AppContext';
 import './styles.css';
+import { PhotoModal } from '../modal/PhotoModal';
 
 export const UserForm = ({ userData }) => {
 
-    const { setUsersData } = useContext(AppContext);
+    const { usersData, setUsersData } = useContext(AppContext);
     let navigate = useNavigate();
 
+    const [playerImage, setPlayerImage] = useState('');
     const [formOptions, setFormOptions] = useState({
         name: '',
         email: '',
@@ -42,7 +44,7 @@ export const UserForm = ({ userData }) => {
         }));
     }
 
-    const onCheckChange = ({target}) => {
+    const onCheckChange = ({ target }) => {
         setFormOptions(val => ({
             ...val,
             checked: target.checked,
@@ -91,6 +93,8 @@ export const UserForm = ({ userData }) => {
             return;
         }
 
+        formOptions.image = playerImage;
+
         setUsersData(val => ({
             ...val,
             [userData.userId]: {
@@ -99,6 +103,24 @@ export const UserForm = ({ userData }) => {
             }
         }));
 
+        navigate(pageLinks.playerPage);
+    }
+
+    const onDeletePlayer = () => {
+        const usersKeys = Object.keys(usersData);
+        const playerFilter = usersKeys.filter(item => item != userData.userId);
+        let playerTemp = {};
+        for (const item of playerFilter) {
+            playerTemp = {
+                ...playerTemp,
+                [item]: {
+                    ...usersData[item],
+                }
+            };
+        }
+        setUsersData({
+            ...playerTemp
+        });
         navigate(pageLinks.playerPage);
     }
 
@@ -172,12 +194,19 @@ export const UserForm = ({ userData }) => {
                                 onClick={onFormSubmit}
                             >Save</button>
                         </div>
-                        <div className="button-content">
-                            <Link to={pageLinks.playerPage}>Back</Link>
-                        </div>
+                        {
+                            userData.userExist
+                            && <div className="button-content">
+                                <button onClick={onDeletePlayer}>Delete</button>
+                            </div>
+                        }
                     </div>
                 </motion.div>
             </div>
+            <PhotoModal
+                setPlayerImage={setPlayerImage}
+                userPosition={userData.userPosition}
+            />
         </>
     )
 }

@@ -22,6 +22,12 @@ export const ConfigurationPLayer = () => {
                                 <div className="border-general-section">
                                     <div className="square-absolute square-left"></div>
                                     <div className="square-absolute square-right"></div>
+                                    <div className="general-button-back">
+                                        <Link to={pageLinks.instructionPageV2}>
+                                            <span>{`< `}</span>
+                                            Go Back
+                                        </Link>
+                                    </div>
                                     <motion.div
                                         animate={{ opacity: 1 }}
                                         initial={{ opacity: 0 }}
@@ -71,7 +77,7 @@ export const ConfigurationPLayer = () => {
                                     >
                                         <div className="button-section">
                                             <div className="button-content">
-                                                <Link to={pageLinks.playerPage}>Skip</Link>
+                                                <Link to={pageLinks.initGamePage}>Skip</Link>
                                             </div>
                                             <div className="button-content">
                                                 <Link to={pageLinks.playerPage}>Set up profile</Link>

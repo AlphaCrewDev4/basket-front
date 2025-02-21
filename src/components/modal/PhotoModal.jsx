@@ -1,19 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { CountdownSection } from '../countdown/CountdownSection';
 import './styles.css';
-import { Link, useNavigate } from 'react-router';
-import { pageLinks } from '../../utils/constants';
-import { AppContext } from '../../context/AppContext';
 
-export const PhotoModal = () => {
+export const PhotoModal = ({ setPlayerImage, userPosition }) => {
 
     const [modalShow, setModalShow] = useState(false);
-    const [activeSection, setActiveSection] = useState('');
-    const [textError, setTextError] = useState('')
+    const [isPlay, setIsPlay] = useState(false);
 
-    const { usersData } = useContext(AppContext);
-    let navigate = useNavigate();
+    useEffect(() => {
+        onShowModal();
+    }, []);
 
     const onHide = () => {
         setModalShow(false);
@@ -23,41 +20,27 @@ export const PhotoModal = () => {
         setModalShow(true);
     }
 
-    const onContinue = () => {
-        let keys = Object.keys(usersData);
-        if (keys.length < 2) {
-            setTextError('You must enter two users');
-            return;
-        }
-        navigate(pageLinks.selectTeamPage);
+    const onGetImage = () => {
+        setPlayerImage('https://placehold.co/200x200');
+        onHide();
     }
 
     return (
         <>
-            <div className="text-error text-center mt-3">
-                <p>{textError}</p>
-            </div>
-            <div className="button-section mt-5">
-                <div className="button-content">
-                    <button onClick={onShowModal}>Open Modal</button>
-                </div>
-                <div className="button-content">
-                    <button onClick={onContinue}>Continue</button>
-                </div>
-            </div>
             <Modal
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={modalShow}
                 onHide={onHide}
-                className='modal-xl modal-photo'
+                className='modal-photo'
+                fullscreen={true}
             >
                 <Modal.Body>
                     <div className="modal-content">
                         <div className="modal-photo-body">
                             <div className="modal-photo-item">
                                 <div className="modal-photo-title">
-                                    <h2>Player 1</h2>
+                                    <h2>Player {userPosition}</h2>
                                 </div>
                             </div>
                             <div className="modal-photo-item">
@@ -69,11 +52,17 @@ export const PhotoModal = () => {
                                 <div className="modal-photo-text text-center">
                                     <p>Begin <br /> Countdown </p>
                                 </div>
-                                <div className="modal-photo-countdown">
-                                    <CountdownSection setActiveSection={setActiveSection} />
+                                <div
+                                    className="modal-photo-countdown"
+                                    onClick={() => setIsPlay(true)}
+                                >
+                                    <CountdownSection
+                                        isPlay={isPlay}
+                                        onCompleteFn={onGetImage}
+                                    />
                                 </div>
                                 <div className="modal-photo-icon">
-                                    <img src='/images/icon-test.PNG' />
+                                    <img src='/images/hand-icon.png' />
                                 </div>
                             </div>
                         </div>

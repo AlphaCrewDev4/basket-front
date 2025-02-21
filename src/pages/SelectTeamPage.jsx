@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { SelectSection } from '../components/team/SelectSection';
+import { pageLinks } from '../utils/constants';
 import './styles.css';
 
 export const SelectTeamPage = () => {
@@ -31,7 +33,13 @@ export const SelectTeamPage = () => {
                     </motion.div>
                 </div>
                 <section className='team-configuration-section'>
-                    <div className="container">
+                    <div className="container" style={{position: 'relative'}}>
+                        <div className="general-button-back">
+                            <Link to={pageLinks.playerPage}>
+                                <span>{`< `}</span>
+                                Go Back
+                            </Link>
+                        </div>
                         <div className="row">
                             <div className="col-12">
                                 <div className="border-general-section">

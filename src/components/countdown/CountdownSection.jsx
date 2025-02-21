@@ -41,14 +41,14 @@ const renderTime = ({ remainingTime }) => {
     );
 };
 
-export const CountdownSection = ({ setActiveSection }) => {
+export const CountdownSection = ({ onCompleteFn, isPlay = true }) => {
     return (
         <CountdownCircleTimer
-            isPlaying
+            isPlaying={isPlay}
             duration={6}
             colors={['#FBCB4F']}
             onComplete={() => {
-                setActiveSection('fight');
+                onCompleteFn();
             }}
         >
             {renderTime}
