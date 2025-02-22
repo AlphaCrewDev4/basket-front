@@ -40,7 +40,11 @@ export const PhotoModal = ({ setPlayerImage, userPosition }) => {
                         <div className="modal-photo-body">
                             <div className="modal-photo-item">
                                 <div className="modal-photo-title">
-                                    <h2>Player {userPosition}</h2>
+                                    <h2>{
+                                        userPosition?.length < 2
+                                            ? `Player ${userPosition}`
+                                            : userPosition
+                                    }</h2>
                                 </div>
                             </div>
                             <div className="modal-photo-item">

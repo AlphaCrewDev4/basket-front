@@ -1,12 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { SelectSection } from '../components/team/SelectSection';
+import { AppContext } from '../context/AppContext';
 import { pageLinks } from '../utils/constants';
 import './styles.css';
 
 export const SelectTeamPage = () => {
+
+    const { appData } = useContext(AppContext);
+    let navigate = useNavigate();
+
+    const onBackPage = () => {
+        if (appData.isCustomPlayers) {
+            navigate(pageLinks.playerPage)
+        } else {
+            navigate(pageLinks.configurationPlayerPage)
+        }
+    }
+
     return (
         <AppLayout>
             <section className='principal-section team-configuration second-bg'>
@@ -33,12 +46,14 @@ export const SelectTeamPage = () => {
                     </motion.div>
                 </div>
                 <section className='team-configuration-section'>
-                    <div className="container" style={{position: 'relative'}}>
+                    <div className="container" style={{ position: 'relative' }}>
                         <div className="general-button-back">
-                            <Link to={pageLinks.playerPage}>
+                            <button
+                                onClick={onBackPage}
+                            >
                                 <span>{`< `}</span>
                                 Go Back
-                            </Link>
+                            </button>
                         </div>
                         <div className="row">
                             <div className="col-12">
@@ -49,7 +64,7 @@ export const SelectTeamPage = () => {
                                         transition={{ duration: 2 }}
                                         style={{ width: '100%', }}
                                     >
-                                        <SelectSection />
+                                        <SelectSection onBackPage={onBackPage} />
                                     </motion.div>
                                 </div>
                             </div>

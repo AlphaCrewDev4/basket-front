@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import './styles.css';
 import { AppContext } from '../../context/AppContext';
 
-export const SelectSection = () => {
+export const SelectSection = ({ onBackPage }) => {
 
     const { usersData, setUsersData } = useContext(AppContext);
     let navigate = useNavigate();
@@ -156,7 +156,9 @@ export const SelectSection = () => {
                         >Save</button>
                     </div>
                     <div className="button-content button-left">
-                        <Link to={pageLinks.playerPage}>Back</Link>
+                        <button
+                            onClick={onBackPage}
+                        >Back</button>
                     </div>
                 </div>
             </div>

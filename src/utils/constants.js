@@ -395,3 +395,30 @@ export const modeList = [
 export const animationConfig = {
     duration: '1500',
 };
+
+export const defaultPlayers = {
+    user0: {
+        name: 'Player 1',
+        image: 'https://placehold.co/200x200'
+    },
+    user1: {
+        name: 'Player 2',
+        image: 'https://placehold.co/200x200'
+    },
+    user2: {
+        name: 'Player 3',
+        image: 'https://placehold.co/200x200'
+    },
+    user3: {
+        name: 'Player 4',
+        image: 'https://placehold.co/200x200'
+    },
+    user4: {
+        name: 'Player 5',
+        image: 'https://placehold.co/200x200'
+    },
+    user5: {
+        name: 'Player 6',
+        image: 'https://placehold.co/200x200'
+    },
+}

@@ -272,7 +272,10 @@
     top: -4rem;
 }
 
-.body .general-button-back a {
+.body .general-button-back a,
+.body .general-button-back button {
+    background: none;
+    border: none;
     color: var(--light);
     font-family: "Cragres", Times, serif;
     font-size: 32px;
@@ -280,11 +283,13 @@
     transition: all 0.3s ease-in-out;
 }
 
-.body .general-button-back a:hover {
+.body .general-button-back a:hover,
+.body .general-button-back button:hover {
     color: var(--primary);
 }
 
-.body .general-button-back a span {
+.body .general-button-back a span,
+.body .general-button-back button span {
     font-family: cursive;
 }
 

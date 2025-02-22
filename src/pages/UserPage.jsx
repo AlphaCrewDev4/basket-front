@@ -21,13 +21,13 @@ export const UserPage = () => {
                 ...usersData[`user${user}`],
                 userId: `user${user}`,
                 userExist: true,
-                userPosition: Number(user) + 1,
+                userPosition: usersData[`user${user}`].name,
             })
         } else {
             setUserData({
                 userId: `user${user}`,
                 userExist: false,
-                userPosition: Number(user) + 1,
+                userPosition: `${Number(user) + 1}`,
             });
         }
         setActiveNumber(Number(user));

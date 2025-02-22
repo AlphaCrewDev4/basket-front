@@ -1,16 +1,39 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
-import { pageLinks } from '../utils/constants';
+import { defaultPlayers, pageLinks } from '../utils/constants';
 import { AppContext } from '../context/AppContext';
 import './styles.css';
 
 export const ConfigurationPLayer = () => {
 
-    const { appData } = useContext(AppContext);
+    const { setAppData, setUsersData } = useContext(AppContext);
 
-    console.log(appData);
+    let navigate = useNavigate();
+
+    const onCreateCustomPlayers = () => {
+        setUsersData({});
+        setAppData(val => ({
+            ...val,
+            isCustomPlayers: true,
+        }));
+
+        navigate(pageLinks.playerPage);
+    }
+
+    const onCreateDefaultPlayers = () => {
+        setUsersData({
+            ...defaultPlayers,
+        });
+
+        setAppData(val => ({
+            ...val,
+            isCustomPlayers: false,
+        }));
+
+        navigate(pageLinks.selectTeamPage);
+    }
 
     return (
         <AppLayout>
@@ -77,10 +100,10 @@ export const ConfigurationPLayer = () => {
                                     >
                                         <div className="button-section">
                                             <div className="button-content">
-                                                <Link to={pageLinks.initGamePage}>Skip</Link>
+                                                <button onClick={onCreateDefaultPlayers}>Skip</button>
                                             </div>
                                             <div className="button-content">
-                                                <Link to={pageLinks.playerPage}>Set up profile</Link>
+                                                <button onClick={onCreateCustomPlayers}>Set up profile</button>
                                             </div>
                                         </div>
 
