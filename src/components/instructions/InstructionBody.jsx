@@ -9,7 +9,6 @@ export const InstructionBody = () => {
     const [animationValue, setAnimationValue] = useState(1);
 
     const onChangeInstruction = ({ instruction }) => {
-        console.log(instruction)
         setAnimationValue(0);
         setTimeout(() => {
             setActiveInstruction(instruction);
@@ -25,12 +24,16 @@ export const InstructionBody = () => {
                         instructionsListV2.map(item => (
                             <div className={
                                 item.id == activeInstruction.id
-                                ? 'instruction__button active'
-                                : 'instruction__button'
+                                    ? 'instruction__button active'
+                                    : 'instruction__button'
                             } key={item.id}>
-                                <button
-                                    onClick={() => onChangeInstruction({instruction: item})}
-                                >{item.name}</button>
+                                {
+                                    item.comingSoon
+                                        ? <button>Coming Soon</button>
+                                        : <button
+                                            onClick={() => onChangeInstruction({ instruction: item })}
+                                        >{item.name}</button>
+                                }
                             </div>
                         ))
                     }

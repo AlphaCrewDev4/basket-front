@@ -134,7 +134,7 @@
 }
 
 .instruction__section .instruction__body .instruction__right .instruction__slider__item .title-content {
-    width: 60%;
+    width: 70%;
 }
 
 .instruction__section .instruction__body .instruction__right .instruction__slider__item .title-content .title-2 h2 {
@@ -143,6 +143,10 @@
 
 .instruction__section .instruction__body .instruction__right .instruction__slider__item .slider__description {
     font-size: 20px;
+}
+
+.instruction__section .instruction__body .instruction__right .instruction__slider__item .slider__image {
+    min-height: 250px;
 }
 
 .instruction__section .instruction__body .instruction__right .alice-carousel__prev-btn,

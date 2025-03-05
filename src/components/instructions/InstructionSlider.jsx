@@ -23,6 +23,9 @@ export const InstructionSlider = ({ instructions }) => {
                             <h2>{instruction.title}</h2>
                         </div>
                     </div>
+                    <div className="text-content">
+                        <p>{instruction?.description}</p>
+                    </div>
                     <div className="slider__description">
                         <p>{instruction.text}</p>
                     </div>

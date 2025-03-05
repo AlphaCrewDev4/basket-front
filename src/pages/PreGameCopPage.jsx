@@ -1,48 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import React from 'react';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
-import { UserButtons } from '../components/user/UserButtons';
+import { ConfirmationSection } from '../components/team/ConfirmationSection';
 import { pageLinks } from '../utils/constants';
-import { AppContext } from '../context/AppContext';
+import { Link } from 'react-router';
+import './styles.css';
+import { ConfirmationCopSection } from '../components/team/ComfirmationCopSection';
 
-export const PlayerPage = () => {
-
-    const [textError, setTextError] = useState('')
-
-    const { usersData, appData } = useContext(AppContext);
-    let navigate = useNavigate();
-
-    const onContinue = () => {
-        let keys = Object.keys(usersData);
-        let isCop = false;
-
-        if (appData.gameType == 'Co-op') {
-            isCop = true;
-        }
-
-        if (appData.gameType == 'Co-op' && keys.length < 1) {
-            setTextError('You must enter one players');
-            return;
-        }
-
-        if (appData.gameType == 'Competitive' && keys.length < 2) {
-            setTextError('You must enter two players');
-            return;
-        }
-
-        if (isCop) {
-            navigate(pageLinks.preGamePageCop);
-        } else {
-            navigate(pageLinks.selectTeamPage);
-        }
-
-    }
-
+export const PreGameCopPage = () => {
     return (
         <AppLayout>
-            <section className='principal-section second-bg'>
-                <section className='player-section'>
+            <section className='principal-section pre-game second-bg'>
+                <section className='pre-game-cop-section'>
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
@@ -50,7 +19,7 @@ export const PlayerPage = () => {
                                     <div className="square-absolute square-left"></div>
                                     <div className="square-absolute square-right"></div>
                                     <div className="general-button-back">
-                                        <Link to={pageLinks.configurationPlayerPage}>
+                                        <Link to={pageLinks.playerPage}>
                                             <span>{`< `}</span>
                                             Go Back
                                         </Link>
@@ -63,8 +32,7 @@ export const PlayerPage = () => {
                                     >
                                         <div className="title-content">
                                             <div className="title-2 text-center">
-                                                <h2>IT’S TIME TO KNOW <br />
-                                                    THE WARRIORS!
+                                                <h2>Cop-Op Mode
                                                 </h2>
                                             </div>
                                         </div>
@@ -74,20 +42,33 @@ export const PlayerPage = () => {
                                         initial={{ opacity: 0 }}
                                         transition={{ duration: 2 }}
                                     >
-                                        <div className="text-content text-center mb-5">
-                                            <p>Let’s get your profile set up so you can step into the game as a true champion!</p>
+                                        <div className="text-content mb-3 text-center">
+                                            <p>Players:</p>
                                         </div>
                                     </motion.div>
-                                    <UserButtons />
-
-                                    <div className="text-error text-center mt-5">
-                                        <p>{textError}</p>
-                                    </div>
-                                    <div className="button-section mt-5">
-                                        <div className="button-content">
-                                            <button onClick={onContinue}>Continue</button>
+                                    <motion.div
+                                        animate={{ opacity: 1 }}
+                                        initial={{ opacity: 0 }}
+                                        transition={{ duration: 2 }}
+                                        style={{ width: '100%', }}
+                                    >
+                                        <ConfirmationCopSection />
+                                    </motion.div>
+                                    <motion.div
+                                        animate={{ opacity: 1 }}
+                                        initial={{ opacity: 0 }}
+                                        transition={{ duration: 1 }}
+                                        className='content-absolute mt-5'
+                                    >
+                                        <div className="button-section">
+                                            <div className="button-content button-left">
+                                                <Link to={pageLinks.playerPage}>Back</Link>
+                                            </div>
+                                            <div className="button-content">
+                                                <Link to={pageLinks.initGamePageCop}>Ready</Link>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </div>
                             </div>
                         </div>

@@ -1,39 +1,16 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
-import { defaultPlayers, pageLinks } from '../utils/constants';
-import { AppContext } from '../context/AppContext';
+import { pageLinks } from '../utils/constants';
 import './styles.css';
+import { AppContext } from '../context/AppContext';
 
 export const ConfigurationPLayer = () => {
 
-    const { setAppData, setUsersData } = useContext(AppContext);
+    const { appData } = useContext(AppContext);
 
-    let navigate = useNavigate();
-
-    const onCreateCustomPlayers = () => {
-        setUsersData({});
-        setAppData(val => ({
-            ...val,
-            isCustomPlayers: true,
-        }));
-
-        navigate(pageLinks.playerPage);
-    }
-
-    const onCreateDefaultPlayers = () => {
-        setUsersData({
-            ...defaultPlayers,
-        });
-
-        setAppData(val => ({
-            ...val,
-            isCustomPlayers: false,
-        }));
-
-        navigate(pageLinks.selectTeamPage);
-    }
+    console.log(appData);
 
     return (
         <AppLayout>
@@ -59,7 +36,7 @@ export const ConfigurationPLayer = () => {
                                     >
                                         <div className="title-content">
                                             <div className="title-2 text-center">
-                                                <h2>We'd like to take a photo of each player for their game profile
+                                                <h2>READY FOR THE GAME?
                                                 </h2>
                                             </div>
                                         </div>
@@ -73,8 +50,8 @@ export const ConfigurationPLayer = () => {
                                                     transition={{ duration: 2 }}
                                                 >
                                                     <div className="text-content text-center">
-                                                        <p className='mb-5'>We can also send you a personalized video of the match!</p>
-                                                        <p>We just need your email/phone number</p>
+                                                        <p>But before you jump in, let’s set up your player profile so we can 
+                                                        personalize your experience!</p>
                                                     </div>
                                                 </motion.div>
                                             </div>
@@ -100,10 +77,7 @@ export const ConfigurationPLayer = () => {
                                     >
                                         <div className="button-section">
                                             <div className="button-content">
-                                                <button onClick={onCreateDefaultPlayers}>Skip</button>
-                                            </div>
-                                            <div className="button-content">
-                                                <button onClick={onCreateCustomPlayers}>Set up profile</button>
+                                                <Link to={pageLinks.playerPage}>Set up profile</Link>
                                             </div>
                                         </div>
 

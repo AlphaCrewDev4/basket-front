@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { pageLinks, usersList } from '../../utils/constants';
 import { Link, useNavigate } from 'react-router';
-import './styles.css';
+import Avatar from 'react-nice-avatar';
+import { pageLinks } from '../../utils/constants';
 import { AppContext } from '../../context/AppContext';
+import './styles.css';
 
-export const SelectSection = ({ onBackPage }) => {
+export const SelectSection = () => {
 
     const { usersData, setUsersData } = useContext(AppContext);
     let navigate = useNavigate();
@@ -21,6 +22,7 @@ export const SelectSection = ({ onBackPage }) => {
                 name: usersData[user].name,
                 image: usersData[user].image || 'https://placehold.co/100x100',
                 team: usersData[user].team || '',
+                isPhoto: usersData[user].isPhoto,
             }]
         }
         setUsers([
@@ -97,7 +99,7 @@ export const SelectSection = ({ onBackPage }) => {
                 }
             }));
         }
-        
+
         navigate(pageLinks.preGamePage);
     }
 
@@ -125,7 +127,11 @@ export const SelectSection = ({ onBackPage }) => {
                         >
                             <div className="select-team-content">
                                 <div className="select-team-image">
-                                    <img src={user.image} />
+                                    {
+                                        user.isPhoto
+                                        ? <img src={user.image} />
+                                        : <Avatar style={{ width: '125px', height: '125px' }} {...user.image} />
+                                    }
                                 </div>
                                 <div className="select-team-name">
                                     {user.name}
@@ -151,14 +157,12 @@ export const SelectSection = ({ onBackPage }) => {
                 </div>
                 <div className="button-section pt-3 mt-5">
                     <div className="button-content button-left">
+                        <Link to={pageLinks.playerPage}>Back</Link>
+                    </div>
+                    <div className="button-content">
                         <button
                             onClick={onSaveTeam}
                         >Save</button>
-                    </div>
-                    <div className="button-content button-left">
-                        <button
-                            onClick={onBackPage}
-                        >Back</button>
                     </div>
                 </div>
             </div>

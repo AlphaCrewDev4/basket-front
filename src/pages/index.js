@@ -10,5 +10,7 @@ export * from './ConfigurationPlayer';
 export * from './UserPage';
 export * from './SelectTeamPage';
 export * from './PreGamePage';
+export * from './PreGameCopPage';
 export * from './ModePage';
 export * from './InitGamePage';
+export * from './InitGameCopPage';

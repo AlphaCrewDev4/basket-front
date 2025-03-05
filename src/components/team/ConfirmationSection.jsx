@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { usersListTeam } from '../../utils/constants';
+import Avatar from 'react-nice-avatar';
 import { AppContext } from '../../context/AppContext';
 
 export const ConfirmationSection = () => {
@@ -16,7 +16,8 @@ export const ConfirmationSection = () => {
                 id: user,
                 name: usersData[user].name,
                 image: usersData[user].image || 'https://placehold.co/100x100',
-                team: usersData[user].team
+                team: usersData[user].team,
+                isPhoto: usersData[user].isPhoto,
             }]
         }
         setUsers([
@@ -35,7 +36,11 @@ export const ConfirmationSection = () => {
                         users.map(item => (
                             item.team == 'Green'
                             && <div className="team-item green-team" key={item.id}>
-                                <img src={item.image} alt={item.name} />
+                                {
+                                    item.isPhoto
+                                        ? <img src={item.image} />
+                                        : <Avatar style={{ width: '200px', height: '200px' }} {...item.image} />
+                                }
                             </div>
                         ))
                     }
@@ -50,7 +55,11 @@ export const ConfirmationSection = () => {
                         users.map(item => (
                             item.team == 'Blue'
                             && <div className="team-item blue-team" key={item.id}>
-                                <img src={item.image} alt={item.name} />
+                                {
+                                    item.isPhoto
+                                        ? <img src={item.image} />
+                                        : <Avatar style={{ width: '200px', height: '200px' }} {...item.image} />
+                                }
                             </div>
                         ))
                     }

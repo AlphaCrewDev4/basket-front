@@ -1,24 +1,12 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router';
+import React from 'react';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { AppLayout } from '../layouts';
 import { SelectSection } from '../components/team/SelectSection';
-import { AppContext } from '../context/AppContext';
-import { pageLinks } from '../utils/constants';
 import './styles.css';
+import { pageLinks } from '../utils/constants';
 
 export const SelectTeamPage = () => {
-
-    const { appData } = useContext(AppContext);
-    let navigate = useNavigate();
-
-    const onBackPage = () => {
-        if (appData.isCustomPlayers) {
-            navigate(pageLinks.playerPage)
-        } else {
-            navigate(pageLinks.configurationPlayerPage)
-        }
-    }
 
     return (
         <AppLayout>
@@ -48,12 +36,7 @@ export const SelectTeamPage = () => {
                 <section className='team-configuration-section'>
                     <div className="container" style={{ position: 'relative' }}>
                         <div className="general-button-back">
-                            <button
-                                onClick={onBackPage}
-                            >
-                                <span>{`< `}</span>
-                                Go Back
-                            </button>
+                            <Link to={pageLinks.playerPage}><span>{`< `}</span></Link>
                         </div>
                         <div className="row">
                             <div className="col-12">
@@ -64,7 +47,7 @@ export const SelectTeamPage = () => {
                                         transition={{ duration: 2 }}
                                         style={{ width: '100%', }}
                                     >
-                                        <SelectSection onBackPage={onBackPage} />
+                                        <SelectSection />
                                     </motion.div>
                                 </div>
                             </div>

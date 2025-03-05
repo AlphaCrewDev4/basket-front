@@ -11,10 +11,12 @@ import {
     ModePage,
     PlayerDataPage,
     PlayerPage,
+    PreGameCopPage,
     PreGamePage,
     SelectTeamPage,
     UserPage
 } from '../pages';
+import { InitGameCopPage } from '../pages/initGameCopPage';
 
 export const AppRouter = () => {
     return (
@@ -28,9 +30,11 @@ export const AppRouter = () => {
             <Route path={pageLinks.userPage} element={<UserPage />} />
             <Route path={pageLinks.selectTeamPage} element={<SelectTeamPage />} />
             <Route path={pageLinks.preGamePage} element={<PreGamePage />} />
+            <Route path={pageLinks.preGamePageCop} element={<PreGameCopPage />} />
             <Route path={pageLinks.modePage} element={<ModePage />} />
             <Route path={pageLinks.playerDataPage} element={<PlayerDataPage />} />
             <Route path={pageLinks.initGamePage} element={<InitGamePage />} />
+            <Route path={pageLinks.initGamePageCop} element={<InitGameCopPage />} />
         </Routes>
     )
 }

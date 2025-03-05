@@ -5,6 +5,7 @@ import { pageLinks } from '../utils/constants';
 import { AppLayout } from '../layouts';
 import { UserForm } from '../components/user/UserForm';
 import { AppContext } from '../context/AppContext';
+import { UserAvatar } from '../components/user/UserAvatar';
 import './styles.css';
 
 export const UserPage = () => {
@@ -13,6 +14,10 @@ export const UserPage = () => {
     const { usersData } = useContext(AppContext);
     const [userData, setUserData] = useState({});
     const [activeNumber, setActiveNumber] = useState(0);
+    const [modalShow, setModalShow] = useState(false);
+    const [avatarDetails, setAvatarDetails] = useState({
+        isPhoto: false,
+    });
 
     useEffect(() => {
         let user = searchParams.get('user') || '0';
@@ -22,7 +27,8 @@ export const UserPage = () => {
                 userId: `user${user}`,
                 userExist: true,
                 userPosition: usersData[`user${user}`].name,
-            })
+            });
+
         } else {
             setUserData({
                 userId: `user${user}`,
@@ -32,6 +38,14 @@ export const UserPage = () => {
         }
         setActiveNumber(Number(user));
     }, []);
+
+    const onHide = () => {
+        setModalShow(false);
+    }
+
+    const onShowModal = () => {
+        setModalShow(true);
+    }
 
     return (
         <AppLayout>
@@ -71,14 +85,21 @@ export const UserPage = () => {
                                                     transition={{ duration: 1 }}
                                                     style={{ width: '100%', }}
                                                 >
-                                                    <div className="image-content">
-                                                        <img src='/images/player-1-sample.png' />
-                                                    </div>
+                                                    <UserAvatar
+                                                        avatarDetails={avatarDetails}
+                                                        setAvatarDetails={setAvatarDetails}
+                                                        onShowModal={onShowModal}
+                                                        userData={userData}
+                                                    />
                                                 </motion.div>
                                             </div>
                                             <div className="col-7 d-flex justify-content-center align-items-center">
                                                 <UserForm
                                                     userData={userData}
+                                                    modalShow={modalShow}
+                                                    onHide={onHide}
+                                                    avatarDetails={avatarDetails}
+                                                    setAvatarDetails={setAvatarDetails}
                                                 />
                                             </div>
                                         </div>

@@ -18,26 +18,17 @@ export const TeamReadySection = () => {
     return (
         <div className="init-game-content">
             <div className="init-game-item">
-                <div className="init-game-title">
-                    <img src='/images/team-green.png' />
-                </div>
                 <div className="init-game-team">
                     <img src='/images/team-1-green.png' />
                 </div>
             </div>
-            <div className="init-game-item">
-                <div className="init-game-title">
-                    <img src='/images/team-blue.png' />
-                </div>
-                <div className="init-game-team">
-                    <img src='/images/team-2-blue.png' />
-                </div>
-            </div>
-            <div className="section-absolute">
+            <div className="init-game-item cop-mode">
                 {
                     activeSection == 'init'
-                        ? <div className="vs-image">
-                            <img src='/images/vs-icon.png' />
+                        ? <div className="title-content">
+                            <div className="title-2">
+                                <h2>Ready?</h2>
+                            </div>
                         </div>
                         : activeSection == 'countdown'
                             ? <div className="countdown-section">
@@ -45,8 +36,10 @@ export const TeamReadySection = () => {
                                     onCompleteFn={changeState}
                                 />
                             </div>
-                            : <div className="fight-image">
-                                <img src='/images/fight-icon.png' />
+                            : <div className="title-content">
+                                <div className="title-2">
+                                    <h2>Go</h2>
+                                </div>
                             </div>
                 }
             </div>

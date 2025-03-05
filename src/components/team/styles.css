@@ -125,6 +125,28 @@
     border: 3px solid var(--team-blue);
 }
 
+/*Pre game cop section*/
+.pre-game-cop-section .pre-game-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pre-game-cop-section .pre-game-body .pre-game-item {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 50%;
+}
+
+.pre-game-cop-section .pre-game-body .pre-game-item img {
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+}
+
 /*Init Game Section*/
 .init-game-section {
     padding: 5rem 0;
@@ -182,6 +204,12 @@
 
 .init-game-section .init-game-content .init-game-item {
     width: 50%;
+}
+
+.init-game-section .init-game-content .init-game-item.cop-mode {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .init-game-section .init-game-content .init-game-item .init-game-title {

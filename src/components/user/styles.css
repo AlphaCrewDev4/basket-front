@@ -6,6 +6,7 @@
 
 .player-section .buttons-container {
     position: relative;
+    width: 100%;
 }
 
 .player-section .buttons-container .buttons-body {
@@ -14,6 +15,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem 6rem;
+    width: 100%;
 }
 
 .player-section .buttons-container .buttons-body .buttons-item {
@@ -53,11 +55,16 @@
     width: 100%;
 }
 
-.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content.button-outline a {
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content.button-outline a,
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content.button-outline button {
     background: linear-gradient(-45deg, var(--primary) calc(0.707*25px + var(--clip-border)), #0000 0) border-box;
     border: 3px solid var(--primary) !important;
     color: var(--light);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+}
+
+.player-section .buttons-container.buttons-data .buttons-body .buttons-item .button-content.button-user {
+    width: calc(100% - 125px);
 }
 
 .player-section .title-absolute {
@@ -92,6 +99,15 @@
 
 .user-section .user-form-content .user-input input::placeholder {
     color: var(--light);
+}
+
+.user-section .user-avatar .avatar-figure {
+    display: flex;
+    justify-content: center;
+}
+
+.user-section .user-avatar .button-content button {
+    font-size: 18px;
 }
 
 .custom-checkbox {

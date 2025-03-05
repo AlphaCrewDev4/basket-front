@@ -11,8 +11,10 @@ export const pageLinks = {
     userPage: '/user',
     selectTeamPage: '/select-team',
     preGamePage: '/pre-game',
+    preGamePageCop: '/pre-game-cop',
     modePage: '/mode',
     initGamePage: '/init-game',
+    initGamePageCop: '/init-game-cop',
 }
 
 export const instructionsList = [
@@ -36,46 +38,52 @@ export const instructionsList = [
 
 export const instructionsListV2 = [
     {
-        id: 'abc1',
+        id: 'game1',
         name: 'Game 1',
         types: [
             {
-                typeName: 'Co-op 1',
+                typeName: 'Co-op',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `When the hoop's screen shows your assigned color, score as much as you can 1`,
+                        description: `Everyone plays towards a shared goal—score when the hoop's screen turns green.`,
+                        title: 'The instructions are simple',
+                        text: `Score when the hoop's screen turns green.`,
                     },
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 1`,
+                        description: `Everyone plays towards a shared goal—score when the hoop's screen turns green.`,
+                        title: 'The instructions are simple',
+                        text: `The screen won't stay on green for long—act fast!`,
                     },
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 1`,
+                        description: `Everyone plays towards a shared goal—score when the hoop's screen turns green.`,
+                        title: 'The instructions are simple',
+                        text: `If the screen turns Red, no points will be recorded.`,
                     },
                 ],
             },
             {
-                typeName: 'Competitive 1',
+                typeName: 'Competitive',
                 instructions: [
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `When the hoop's screen shows your assigned color, score as much as you can 1`,
+                        description: `Team Blue vs. Team Green! Work together to score when your team's color appears.`,
+                        title: 'The instructions are simple',
+                        text: `Score when the hoop's screen turns your team's color.`,
                     },
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 1`,
+                        description: `Team Blue vs. Team Green! Work together to score when your team's color appears.`,
+                        title: 'The instructions are simple',
+                        text: `Score fast - your team’s color won't stay on the screen for long.`,
                     },
                     {
                         image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 1`,
+                        description: `Team Blue vs. Team Green! Work together to score when your team's color appears.`,
+                        title: 'The instructions are simple',
+                        text: `If you score when the opponent's color is displayed, your points go to them!`,
                     },
                 ],
             },
@@ -84,6 +92,7 @@ export const instructionsListV2 = [
     {
         id: 'abc2',
         name: 'Game 2',
+        comingSoon: true,
         types: [
             {
                 typeName: 'Co-op 2',
@@ -130,6 +139,7 @@ export const instructionsListV2 = [
     {
         id: 'abc3',
         name: 'Game 3',
+        comingSoon: true,
         types: [
             {
                 typeName: 'Co-op 3',
@@ -176,6 +186,7 @@ export const instructionsListV2 = [
     {
         id: 'abc4',
         name: 'Game 4',
+        comingSoon: true,
         types: [
             {
                 typeName: 'Co-op 4',
@@ -214,52 +225,6 @@ export const instructionsListV2 = [
                         image: 'https://placehold.co/400x100',
                         title: 'The instruction are simple',
                         text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 4`,
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        id: 'abc5',
-        name: 'Game 5',
-        types: [
-            {
-                typeName: 'Co-op 5',
-                instructions: [
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `When the hoop's screen shows your assigned color, score as much as you can 5`,
-                    },
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 5`,
-                    },
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 5`,
-                    },
-                ],
-            },
-            {
-                typeName: 'Competitive 5',
-                instructions: [
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `When the hoop's screen shows your assigned color, score as much as you can 5`,
-                    },
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `The screens won't show your assigned color for long. If they turn red, no scores will be recorded. 5`,
-                    },
-                    {
-                        image: 'https://placehold.co/400x100',
-                        title: 'The instruction are simple',
-                        text: `If you're playing in teams, be careful not to score when the screen shows your opponent's color! 5`,
                     },
                 ],
             },

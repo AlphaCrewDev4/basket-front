@@ -33,10 +33,9 @@ export const InstructionItem = ({ instruction }) => {
             gameDifficulty: difficulty,
         }
 
-        setAppData(val => ({
-            ...val,
-            gameMode: activeData,
-        }));
+        setAppData({
+            ...activeData,
+        });
 
         navigate(pageLinks.configurationPlayerPage);
     }

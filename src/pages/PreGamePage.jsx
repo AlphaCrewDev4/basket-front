@@ -52,11 +52,11 @@ export const PreGamePage = () => {
                                         className='content-absolute mt-5'
                                     >
                                         <div className="button-section">
-                                            <div className="button-content">
-                                                <Link to={pageLinks.initGamePage}>Ready</Link>
-                                            </div>
                                             <div className="button-content button-left">
                                                 <Link to={pageLinks.selectTeamPage}>Back</Link>
+                                            </div>
+                                            <div className="button-content">
+                                                <Link to={pageLinks.initGamePage}>Ready</Link>
                                             </div>
                                         </div>
 

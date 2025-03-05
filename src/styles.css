@@ -293,6 +293,13 @@
     font-family: cursive;
 }
 
+.body .button-link {
+    background-color: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    text-decoration: underline;
+}
+
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
