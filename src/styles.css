@@ -300,6 +300,14 @@
     text-decoration: underline;
 }
 
+.body .title-absolute .title-content .title-2 h2 {
+    margin: 0;
+}
+
+.modal-terms-content {
+    padding: 1rem;
+}
+
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;

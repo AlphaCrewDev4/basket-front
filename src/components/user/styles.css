@@ -73,13 +73,22 @@
     justify-content: center;
     left: calc(50% - 325px);
     position: absolute;
-    top: -45px;
+    top: -38px;
     width: 650px;
 }
 
 .player-section .title-content .title-2 h2 {
     color: var(--primary);
     line-height: 0.8em;
+}
+
+.user-section .user-form-content .user-input.check-input {
+    align-items: center;
+    display: flex;
+}
+
+.user-section .user-form-content .user-input.check-input .form-label {
+    margin-bottom: 0;
 }
 
 .user-section .user-form-content .user-input input {

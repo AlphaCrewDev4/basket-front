@@ -9,7 +9,7 @@
     left: calc(50% - 350px);
     max-width: 700px;
     position: absolute;
-    top: -51px;
+    top: -38px;
     width: 100%;
 }
 
@@ -49,7 +49,7 @@
     left: calc(50% - 325px);
     padding: 1rem;
     position: absolute;
-    top: -51px;
+    top: -35px;
     width: 650px;
 }
 
@@ -116,7 +116,7 @@
     left: calc(50% - 350px);
     max-width: 700px;
     position: absolute;
-    top: -25px;
+    top: -19px;
     width: 100%;
 }
 

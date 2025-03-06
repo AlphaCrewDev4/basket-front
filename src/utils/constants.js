@@ -39,7 +39,7 @@ export const instructionsList = [
 export const instructionsListV2 = [
     {
         id: 'game1',
-        name: 'Game 1',
+        name: 'HoopX',
         types: [
             {
                 typeName: 'Co-op',
