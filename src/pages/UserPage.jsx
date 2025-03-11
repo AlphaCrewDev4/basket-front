@@ -15,6 +15,7 @@ export const UserPage = () => {
     const [userData, setUserData] = useState({});
     const [activeNumber, setActiveNumber] = useState(0);
     const [modalShow, setModalShow] = useState(false);
+	const [playerImage, setPlayerImage] = useState('');
     const [avatarDetails, setAvatarDetails] = useState({
         isPhoto: false,
     });
@@ -90,6 +91,7 @@ export const UserPage = () => {
                                                         setAvatarDetails={setAvatarDetails}
                                                         onShowModal={onShowModal}
                                                         userData={userData}
+                                                        playerImage={playerImage}
                                                     />
                                                 </motion.div>
                                             </div>
@@ -100,6 +102,7 @@ export const UserPage = () => {
                                                     onHide={onHide}
                                                     avatarDetails={avatarDetails}
                                                     setAvatarDetails={setAvatarDetails}
+                                                    playerImageState={[playerImage, setPlayerImage]}
                                                 />
                                             </div>
                                         </div>

@@ -8,14 +8,14 @@ import './styles.css';
 import { PhotoModal } from '../modal/PhotoModal';
 import { PrivacyPolicyModal } from '../modal/PrivacyPolicyModal';
 
-export const UserForm = ({ userData, modalShow, onHide, avatarDetails, setAvatarDetails }) => {
+export const UserForm = ({ userData, modalShow, onHide, avatarDetails, setAvatarDetails, playerImageState }) => {
 
     const { usersData, setUsersData } = useContext(AppContext);
     const [privacyModalShow, setPrivacyModalShow] = useState(false);
     const [typeUserPolicy, setTypeUserPolicy] = useState('Terms');
     let navigate = useNavigate();
 
-    const [playerImage, setPlayerImage] = useState('');
+    const [playerImage, setPlayerImage] = playerImageState;
     const [formOptions, setFormOptions] = useState({
         name: '',
         email: '',

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Avatar, { genConfig } from 'react-nice-avatar';
 
-export const UserAvatar = ({ avatarDetails, setAvatarDetails, onShowModal, userData }) => {
+export const UserAvatar = ({ avatarDetails, setAvatarDetails, onShowModal, userData, playerImage }) => {
 
     const [avatarConfig, setAvatarConfig] = useState({ ...genConfig() });
 
@@ -51,7 +51,7 @@ export const UserAvatar = ({ avatarDetails, setAvatarDetails, onShowModal, userD
                 {
                     avatarDetails.isPhoto
                         ? <div className="image-content">
-                            <img src='https://placehold.co/500x800' />
+                            <img src={playerImage} />
                         </div>
                         : <>
                             <div className="avatar-figure">
