@@ -1,0 +1,85 @@
+/*Basic countdown*/
+.basic-countdown .timer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.basic-countdown .time-wrapper {
+    position: relative;
+    width: 80px;
+    height: 60px;
+    font-size: 80px;
+    font-family: "Cragres", Times, serif;
+}
+
+.basic-countdown .time-wrapper .time {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.basic-countdown .time-wrapper .time.up {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.basic-countdown .time-wrapper .time.down {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+/**/
+.timer-date {
+    display: flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.timer-date .time {
+    font-size: 32px;
+}
+
+/**/
+.timer-not-circle {
+    align-items: center;
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 95% 100%, 5% 100%, 0% 75%);
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    padding: 0 3rem;
+    text-align: center;
+}
+
+.timer-not-circle svg {
+    display: none;
+}
+
+.timer-not-circle div {
+    height: 75px !important;
+    width: 80px !important;
+}
+
+.timer-not-circle .time-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.timer-not-circle .time-wrapper p,
+.timer-not-circle .timer-separation {
+    color: var(--dark);
+    font-family: "Cragres", Times, serif;
+    font-size: 40px;
+    margin: 0;
+}

@@ -1,0 +1,88 @@
+.game-card-section {
+    position: relative;
+    width: 100%;
+}
+
+.game-card-section .game-card-body {
+    display: flex;
+    width: 100%;
+}
+
+.game-card-section .game-card-body .game-card-item {
+    margin-right: 4%;
+    position: relative;
+    padding: 2rem;
+    padding-top: 15rem;
+    width: 48%;
+}
+
+.game-card-section .game-card-body .game-card-item p {
+    font-family: "Cragres", Times, serif;
+    margin: 0;
+}
+
+.game-card-section .game-card-body .game-card-item:last-child {
+    margin-right: 0;
+}
+
+.game-card-section .game-card-body .game-card-item.container-left {
+    border: 4px solid var(--team-green);
+}
+
+.game-card-section .game-card-body .game-card-item.container-right {
+    border: 4px solid var(--team-blue);
+}
+
+.game-card-section .game-card-body .game-card-item .team-image {
+    position: absolute;
+    top: 8px;
+    width: 150px;
+}
+
+.game-card-section .game-card-body .game-card-item.container-left .team-image {
+    right: 8px;
+}
+
+.game-card-section .game-card-body .game-card-item.container-right .team-image {
+    left: 8px;
+}
+
+.game-card-section .game-card-body .game-card-item .score-title {
+    font-size: 48px;
+    line-height: 1em;
+    text-align: center;
+}
+
+.game-card-section .game-card-body .game-card-item .score-number {
+    font-size: 120px;
+    line-height: 1em;
+    text-align: center;
+}
+
+.game-card-section .game-card-body .game-card-item .team-images {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.game-card-section .game-card-body .game-card-item .team-images .image-item {
+    margin-right: 4%;
+    width: 32%;
+}
+
+.game-card-section .game-card-body .game-card-item .team-images .image-item:last-child {
+    margin-right: 0;
+}
+
+.game-card-section .game-card-body .game-card-item .team-images .image-item img {
+    border-radius: 50%;
+}
+
+.game-card-section .game-card-body .game-card-item.container-left .team-images .image-item img {
+    border: 3px solid var(--team-green);
+}
+
+.game-card-section .game-card-body .game-card-item.container-right .team-images .image-item img {
+    border: 3px solid var(--team-blue);
+}

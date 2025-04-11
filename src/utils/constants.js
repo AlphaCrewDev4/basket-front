@@ -15,6 +15,10 @@ export const pageLinks = {
     modePage: '/mode',
     initGamePage: '/init-game',
     initGamePageCop: '/init-game-cop',
+    //Game Routes
+    beforeGame: '/game/before-game',
+    duringGame: '/game/during-game',
+    winnerGame: '/game/winner-game',
 }
 
 export const instructionsList = [
@@ -387,3 +391,28 @@ export const defaultPlayers = {
         image: 'https://placehold.co/200x200'
     },
 }
+
+export const gameObjectTeams = [
+    {
+        id: 'team 1',
+        score: 12,
+        teamClassName: 'container-left',
+        teamImage: '/images/team-green.png',
+        imagePlayers: [
+            'https://placehold.co/200x200',
+            'https://placehold.co/200x200',
+            'https://placehold.co/200x200',
+        ],
+    },
+    {
+        id: 'team 2',
+        score: 5,
+        teamClassName: 'container-right',
+        teamImage: '/images/team-blue.png',
+        imagePlayers: [
+            'https://placehold.co/200x200',
+            'https://placehold.co/200x200',
+            'https://placehold.co/200x200',
+        ],
+    },
+];

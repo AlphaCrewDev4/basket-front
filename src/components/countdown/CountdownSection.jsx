@@ -43,15 +43,17 @@ const renderTime = ({ remainingTime }) => {
 
 export const CountdownSection = ({ onCompleteFn, isPlay = true }) => {
     return (
-        <CountdownCircleTimer
-            isPlaying={isPlay}
-            duration={6}
-            colors={['#FBCB4F']}
-            onComplete={() => {
-                onCompleteFn();
-            }}
-        >
-            {renderTime}
-        </CountdownCircleTimer>
+        <div className="basic-countdown">
+            <CountdownCircleTimer
+                isPlaying={isPlay}
+                duration={6}
+                colors={['#FBCB4F']}
+                onComplete={() => {
+                    onCompleteFn();
+                }}
+            >
+                {renderTime}
+            </CountdownCircleTimer>
+        </div>
     )
 }

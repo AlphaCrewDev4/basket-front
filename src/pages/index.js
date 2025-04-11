@@ -14,3 +14,8 @@ export * from './PreGameCopPage';
 export * from './ModePage';
 export * from './InitGamePage';
 export * from './InitGameCopPage';
+
+//Game directory
+export * from './game/BeforeGame';
+export * from './game/DuringGame';
+export * from './game/WinnerGame';

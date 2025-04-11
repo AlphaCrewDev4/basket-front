@@ -125,3 +125,44 @@
     line-height: 0.8em;
     font-size: 3rem;
 }
+
+
+/*before-game-section*/
+.body .before-game-section .title-content .title-1 h1 {
+    color: var(--primary);
+    font-size: 6rem;
+    position: relative;
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.body .before-game-section .init-text {
+    font-size: 3rem;
+}
+
+.body .before-game-section .timer {
+    left: calc(50% - 120px);
+    position: absolute;
+    top: 0;
+}
+
+/*during-game-section*/
+.body .during-game-section {
+    width: 100%;
+}
+
+.body .during-game-section .timer {
+    left: calc(50% - 120px);
+    position: absolute;
+    top: 0;
+}
+
+/*winner-game-section*/
+.body .winner-game-section {
+    width: 100%;
+}
+
+.body .winner-game-section .timer {
+    left: calc(50% - 120px);
+    position: absolute;
+    top: 0;
+}

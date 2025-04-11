@@ -3,8 +3,11 @@ import { Route, Routes } from 'react-router';
 import { pageLinks } from '../utils/constants';
 import {
     ActionPage,
+    BeforeGame,
     ConfigurationPLayer,
+    DuringGame,
     HomePage,
+    InitGameCopPage,
     InitGamePage,
     InstructionPage,
     InstructionPagev2,
@@ -14,9 +17,9 @@ import {
     PreGameCopPage,
     PreGamePage,
     SelectTeamPage,
-    UserPage
+    UserPage,
+    WinnerGame
 } from '../pages';
-import { InitGameCopPage } from '../pages/initGameCopPage';
 
 export const AppRouter = () => {
     return (
@@ -35,6 +38,10 @@ export const AppRouter = () => {
             <Route path={pageLinks.playerDataPage} element={<PlayerDataPage />} />
             <Route path={pageLinks.initGamePage} element={<InitGamePage />} />
             <Route path={pageLinks.initGamePageCop} element={<InitGameCopPage />} />
+            {/* Game Routes */}
+            <Route path={pageLinks.beforeGame} element={<BeforeGame />} />
+            <Route path={pageLinks.duringGame} element={<DuringGame />} />
+            <Route path={pageLinks.winnerGame} element={<WinnerGame />} />
         </Routes>
     )
 }
