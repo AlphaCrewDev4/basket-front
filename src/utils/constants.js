@@ -416,3 +416,16 @@ export const gameObjectTeams = [
         ],
     },
 ];
+
+export const gameWinnerTeam = {
+    id: 'team 1',
+    score: 9,
+    teamClassName: 'team-1',
+    teamName: 'Green',
+    teamImage: '/images/team-green.png',
+    imagePlayers: [
+        'https://placehold.co/200x200',
+        'https://placehold.co/200x200',
+        'https://placehold.co/200x200',
+    ],
+};
