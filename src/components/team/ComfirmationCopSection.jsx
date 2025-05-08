@@ -30,11 +30,16 @@ export const ConfirmationCopSection = () => {
             {
                 users.map(item => (
                     <div className="pre-game-item" key={item.id}>
+                        <div className="pre-game-image">
                         {
                             item.isPhoto
                                 ? <img src={item.image} />
                                 : <Avatar style={{ width: '200px', height: '200px' }} {...item.image} />
                         }
+                        </div>
+                        <div className="pre-game-name">
+                            <p>{item.name}</p>
+                        </div>
                     </div>
                 ))
             }

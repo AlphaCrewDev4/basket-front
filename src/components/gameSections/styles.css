@@ -36,7 +36,7 @@
 .game-card-section .game-card-body .game-card-item .team-image {
     position: absolute;
     top: 8px;
-    width: 150px;
+    width: 225px;
 }
 
 .game-card-section .game-card-body .game-card-item.container-left .team-image {
@@ -68,7 +68,7 @@
 
 .game-card-section .game-card-body .game-card-item .team-images .image-item {
     margin-right: 4%;
-    width: 32%;
+    width: 35%;
 }
 
 .game-card-section .game-card-body .game-card-item .team-images .image-item:last-child {
@@ -187,7 +187,7 @@
 }
 
 .winner-game-section .winner-card-section .winner-card-players .image-player {
-    width: 125px;
+    width: 200px;
 }
 
 .winner-game-section .winner-card-section .winner-card-players .image-player img {
@@ -207,5 +207,79 @@
     left: 0;
     position: absolute;
     width: 100%;
+}
+
+/*Game Cop Body*/
+.during-cop-game-section .game-card-body {
+    width: 100%;
+}
+
+.during-cop-game-section .game-card-body .game-card-item {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.during-cop-game-section .game-card-body .game-card-item .score-title p {
+    font-family: "Cragres", Times, serif;
+    font-size: 60px;
+    line-height: 1em;
+    margin: 0;
+}
+
+.during-cop-game-section .game-card-body .game-card-item .score-number p {
+    font-family: "Cragres", Times, serif;
+    font-size: 160px;
+    line-height: 1em;
+}
+
+.during-cop-game-section .game-card-body .game-card-item .team-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.during-cop-game-section .game-card-body .game-card-item .team-images .image-item {
+    border: 5px solid var(--primary);
+    border-radius: 50%;
+    margin-top: 2rem;
+    overflow: hidden;
+    width: 225px;
+}
+
+.during-cop-game-section .game-card-body .game-card-item .team-images .image-item img {
+    border-radius: 50%;
+}
+
+/*Winner cop section styles*/
+.winner-game-section.winner-cop-game-section .winner-card-section .square-absolute.square-left {
+    border-left: 8px solid var(--primary);
+    border-top: 8px solid var(--primary);
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section .square-absolute.square-right {
+    border-right: 8px solid var(--primary);
+    border-top: 8px solid var(--primary);
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section {
+    border: 5px solid var(--primary);
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section .winner-card-title h1 {
+    color: var(--primary);
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section .winner-card-players .image-player img {
+    border: 4px solid var(--primary);
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section .winner-card-score p {
+    font-size: 60px;
+    line-height: 1em;
+}
+
+.winner-game-section.winner-cop-game-section .winner-card-section .winner-card-number p {
+    font-size: 140px;
+    line-height: 1em;
 }
 

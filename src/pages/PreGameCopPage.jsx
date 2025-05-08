@@ -41,15 +41,6 @@ export const PreGameCopPage = () => {
                                         animate={{ opacity: 1 }}
                                         initial={{ opacity: 0 }}
                                         transition={{ duration: 2 }}
-                                    >
-                                        <div className="text-content mb-3 text-center">
-                                            <p>Players:</p>
-                                        </div>
-                                    </motion.div>
-                                    <motion.div
-                                        animate={{ opacity: 1 }}
-                                        initial={{ opacity: 0 }}
-                                        transition={{ duration: 2 }}
                                         style={{ width: '100%', }}
                                     >
                                         <ConfirmationCopSection />

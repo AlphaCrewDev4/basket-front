@@ -5,6 +5,7 @@ export const pageLinks = {
     ready: '/ready',
     instructionPage: '/instruction',
     instructionPageV2: '/instruction-v2',
+    instructionPageV3: '/instruction-v3',
     playerPage: '/player',
     playerDataPage: '/player-data',
     configurationPlayerPage: '/configuration-player',
@@ -15,10 +16,13 @@ export const pageLinks = {
     modePage: '/mode',
     initGamePage: '/init-game',
     initGamePageCop: '/init-game-cop',
+    chooseGame: '/choose-game',
     //Game Routes
     beforeGame: '/game/before-game',
     duringGame: '/game/during-game',
+    duringCopGame: '/game/during-cop-game',
     winnerGame: '/game/winner-game',
+    winnerCopGame: '/game/winner-cop-game',
 }
 
 export const instructionsList = [
@@ -401,7 +405,6 @@ export const gameObjectTeams = [
         imagePlayers: [
             'https://placehold.co/200x200',
             'https://placehold.co/200x200',
-            'https://placehold.co/200x200',
         ],
     },
     {
@@ -410,7 +413,6 @@ export const gameObjectTeams = [
         teamClassName: 'container-right',
         teamImage: '/images/team-blue.png',
         imagePlayers: [
-            'https://placehold.co/200x200',
             'https://placehold.co/200x200',
             'https://placehold.co/200x200',
         ],
@@ -424,6 +426,17 @@ export const gameWinnerTeam = {
     teamName: 'Green',
     teamImage: '/images/team-green.png',
     imagePlayers: [
+        'https://placehold.co/200x200',
+        'https://placehold.co/200x200',
+    ],
+};
+
+export const gameObjectCop = {
+    id: 'team 1',
+    score: 9,
+    teamClassName: 'team-1',
+    imagePlayers: [
+        'https://placehold.co/200x200',
         'https://placehold.co/200x200',
         'https://placehold.co/200x200',
         'https://placehold.co/200x200',

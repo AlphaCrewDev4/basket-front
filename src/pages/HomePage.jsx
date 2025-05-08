@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from "motion/react";
 import { useNavigate } from 'react-router';
 import { AppLayout } from '../layouts';
-import { animationConfig } from '../utils/constants';
+import { pageLinks } from '../utils/constants';
 
 export const HomePage = () => {
 
@@ -13,7 +13,7 @@ export const HomePage = () => {
         setTimeout(() => {
             setIsVisible(0);
             setTimeout(() => {
-                navigate('/ready');
+                navigate(pageLinks.ready);
             }, [2000]);
         }, [3000]);
     }, []);
@@ -59,7 +59,6 @@ export const HomePage = () => {
                                             <h1 onClick={() => setIsVisible(1)}>Welcome</h1>
                                         </div>
                                     </div>
-
                                 </motion.div>
                             </div>
                         </div>

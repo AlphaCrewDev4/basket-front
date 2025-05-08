@@ -23,7 +23,7 @@ export const ConfigurationPLayer = () => {
                                     <div className="square-absolute square-left"></div>
                                     <div className="square-absolute square-right"></div>
                                     <div className="general-button-back">
-                                        <Link to={pageLinks.instructionPageV2}>
+                                        <Link to={pageLinks.chooseGame}>
                                             <span>{`< `}</span>
                                             Go Back
                                         </Link>

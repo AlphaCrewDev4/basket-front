@@ -15,23 +15,18 @@ export const PlayerPage = () => {
 
     const onContinue = () => {
         let keys = Object.keys(usersData);
-        let isCop = false;
+        let isCoop = false;
 
         if (appData.gameType == 'Co-op') {
-            isCop = true;
+            isCoop = true;
         }
 
-        if (appData.gameType == 'Co-op' && keys.length < 1) {
-            setTextError('You must enter one players');
+        if ( keys.length < appData.players) {
+            setTextError(`You must enter ${appData.players} players`);
             return;
         }
 
-        if (appData.gameType == 'Competitive' && keys.length < 2) {
-            setTextError('You must enter two players');
-            return;
-        }
-
-        if (isCop) {
+        if (isCoop) {
             navigate(pageLinks.preGamePageCop);
         } else {
             navigate(pageLinks.selectTeamPage);

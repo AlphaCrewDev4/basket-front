@@ -237,3 +237,20 @@
     border-left: none;
     right: -6px;
 }
+
+
+/*Instructions v3*/
+.instruction__section.instruction__section__v3 .instruction__body .instruction__right {
+    width: 100%;
+}
+
+.instruction__section.instruction__section__v3 .instruction__body .instruction__right .instruction__slider__item .title-content {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.instruction__section.instruction__section__v3 .instruction__body .instruction__right .instruction__slider__item .title-content .title-2 h2,
+.instruction__section.instruction__section__v3 .instruction__body .instruction__right .instruction__slider__item .text-content p,
+.instruction__section.instruction__section__v3 .instruction__body .instruction__right .instruction__slider__item .slider__description p {
+    text-align: center;
+}

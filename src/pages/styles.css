@@ -156,6 +156,17 @@
     top: 0;
 }
 
+/*during-cop-game-section*/
+.body .during-cop-game-section {
+    width: 100%;
+}
+
+.body .during-cop-game-section .timer {
+    left: calc(50% - 120px);
+    position: absolute;
+    top: 0;
+}
+
 /*winner-game-section*/
 .body .winner-game-section {
     width: 100%;
@@ -166,3 +177,33 @@
     position: absolute;
     top: 0;
 }
+
+/*Welcome section*/
+.body .welcome-section .link-content a {
+    color: var(--light);
+    font-family: "Cragres", Times, serif;
+    font-size: 28px;
+}
+
+/*Choose Game section*/
+.body .choose-game-section {
+    width: 100%;
+}
+
+.body .choose-game-section .title-content {
+    margin-bottom: 3rem;
+}
+
+.body .choose-game-section .title-content h1 {
+    color: var(--primary);
+    font-size: 72px;
+}
+
+.body .choose-game-section .button-section .button-content .text-content {
+    margin-top: 3rem;
+}
+
+.body .choose-game-section .button-section .button-content .text-content p {
+    font-family: 'Glitch Slap', Times, serif;
+}
+

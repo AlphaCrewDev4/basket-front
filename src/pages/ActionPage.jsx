@@ -57,7 +57,10 @@ export const ActionPage = () => {
                                     </div>
                                 </div>
                                 <div className="button-content text-center mt-5">
-                                    <Link to={pageLinks.instructionPageV2}>Choose Game Mode</Link>
+                                    <Link to={pageLinks.chooseGame}>Start</Link>
+                                </div>
+                                <div className="link-content mt-5 text-center">
+                                    <Link to={pageLinks.instructionPageV3}>Instructions</Link>
                                 </div>
                             </motion.div>
                         </div>

@@ -101,13 +101,15 @@
 
 .pre-game-section .pre-game-body .pre-game-item .pre-game-image {
     margin: 0 auto;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     width: 500px;
 }
 
 .pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item {
+    border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 1rem;
+    overflow: hidden;
     width: 200px;
 }
 
@@ -117,31 +119,57 @@
     object-fit: cover;
 }
 
-.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.green-team img {
+.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.green-team {
     border: 3px solid var(--team-green);
 }
 
-.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.blue-team img {
+.pre-game-section .pre-game-body .pre-game-item .pre-game-team .team-item.blue-team {
     border: 3px solid var(--team-blue);
 }
 
 /*Pre game cop section*/
 .pre-game-cop-section .pre-game-body {
+    align-items: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 500px;
 }
 
 .pre-game-cop-section .pre-game-body .pre-game-item {
+    align-items: center;
     display: flex;
     justify-content: center;
     padding: 1rem;
     width: 50%;
 }
 
+.pre-game-cop-section .pre-game-body .pre-game-item .pre-game-image {
+    border: 5px solid var(--primary);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.pre-game-cop-section .pre-game-body .pre-game-item .pre-game-name {
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%);
+    margin-left: -1rem;
+    padding: 1rem 0;
+    text-align: center;
+    width: 250px;
+}
+
+.pre-game-cop-section .pre-game-body .pre-game-item .pre-game-name p {
+    color: var(--dark);
+    font-family: "Cragres", Times, serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
 .pre-game-cop-section .pre-game-body .pre-game-item img {
     aspect-ratio: 1 / 1;
-    border: 2px solid var(--primary);
     border-radius: 50%;
     object-fit: cover;
     width: 200px;
@@ -149,7 +177,6 @@
 
 /*Init Game Section*/
 .init-game-section {
-    padding: 5rem 0;
     position: absolute;
     width: 100%;
 }
@@ -157,11 +184,10 @@
 .init-game-section .init-game-content {
     display: flex;
     justify-content: space-between;
-    position: relative;
     width: 100%;
 }
 
-.init-game-section .init-game-content::before {
+/*.init-game-section .init-game-content::before {
     background-color: var(--team-green);
     bottom: 0;
     content: "";
@@ -179,7 +205,7 @@
     position: absolute;
     right: 0;
     width: 45%;
-}
+}*/
 
 .init-game-section .init-game-content .square-absolute {
     border-top: none !important;
@@ -239,6 +265,104 @@
     width: 250px;
 }
 
+.init-game-section .init-game-content .section-absolute .vs-image,
+.init-game-section .init-game-content .section-absolute .countdown-section,
+.init-game-section .init-game-content .section-absolute .fight-image {
+    margin-top: 6rem;
+}
+
 .init-game-section .init-game-content .section-absolute .fight-image {
     width: 450px;
 }
+
+.pre-game-section.init-game-section .pre-game-body {
+    margin-top: 8rem;
+    min-height: 600px;
+}
+
+.pre-game-section.init-game-section .pre-game-body .pre-game-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.pre-game-section.init-game-section .pre-game-body .pre-game-item .pre-game-image {
+    left: calc(50% - 250px);
+    position: absolute;
+    top: -100px;
+}
+
+/*Init Game Cop Section*/
+.init-game-cop-section .pre-game-body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 700px;
+}
+
+.init-game-cop-section .pre-game-body .pre-game-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 50%;
+}
+
+.init-game-cop-section .pre-game-body .pre-game-item .pre-game-image {
+    border: 5px solid var(--primary);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.init-game-cop-section .pre-game-body .pre-game-item .pre-game-name {
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%);
+    margin-left: -1rem;
+    padding: 1rem 0;
+    text-align: center;
+    width: 250px;
+}
+
+.init-game-cop-section .pre-game-body .pre-game-item .pre-game-name p {
+    color: var(--dark);
+    font-family: "Cragres", Times, serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.init-game-cop-section .pre-game-body .pre-game-item img {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+}
+
+.init-game-cop-section .init-game-content .section-absolute {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.init-game-cop-section .init-game-content .section-absolute .vs-image {
+    width: 250px;
+}
+
+.init-game-cop-section .init-game-content .section-absolute .vs-image,
+.init-game-cop-section .init-game-content .section-absolute .countdown-section,
+.init-game-cop-section .init-game-content .section-absolute .fight-image {
+    margin-top: 0;
+}
+
+.init-game-cop-section .init-game-content .section-absolute .fight-image {
+    width: 450px;
+}
+

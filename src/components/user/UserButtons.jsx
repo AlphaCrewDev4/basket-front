@@ -14,7 +14,7 @@ export const UserButtons = () => {
     const [buttonsData, setButtonsData] = useState([]);
 
     useEffect(() => {
-        let userKeys = Object.keys(usersData);
+        /*let userKeys = Object.keys(usersData);
         if (userKeys.length > 0) {
             setButtonCounter(userKeys.length);
         } else {
@@ -25,7 +25,8 @@ export const UserButtons = () => {
             if (appData.gameType == 'Competitive') {
                 setButtonCounter(2);
             }
-        }
+        }*/
+        setButtonCounter(appData.players);
     }, []);
 
     useEffect(() => {
@@ -103,12 +104,12 @@ export const UserButtons = () => {
                             ))
                         }
                         {
-                            buttonCounter < 6
+                            /*buttonCounter < 6
                             && <div className="buttons-item">
                                 <div className="button-content button-outline">
                                     <button onClick={incrementPlayers}>+</button>
                                 </div>
-                            </div>
+                            </div>*/
                         }
                     </motion.div>
                 </div>

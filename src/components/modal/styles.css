@@ -42,6 +42,37 @@
     width: 60px;
 }
 
+/*Modal game styles*/
+.modal-choose-game .title-content .title-2 h2 {
+    color: var(--light);
+    font-family: "Cragres", Times, serif;
+    font-size: 40px;
+    text-shadow: none;
+}
+
+.modal-choose-game .competitive-section button {
+    width: 300px;
+}
+
+.modal-choose-game .cooperative-section .cooperative-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-choose-game .cooperative-section .cooperative-buttons  .button-content button {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+    font-size: 24px;
+    padding: 1rem 2rem;
+}
+
+.modal-choose-game .cooperative-section .cooperative-buttons .button-content.active button {
+    background: linear-gradient(0deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+    border-color: var(--btn-primary) !important;
+    color: var(--dark);
+}
+
 @keyframes iconMove {
     0% {
         bottom: 0;

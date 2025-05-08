@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { CountdownSection } from '../countdown/CountdownSection';
+import { useNavigate } from 'react-router';
+import { pageLinks } from '../../utils/constants';
 
-export const TeamReadySection = () => {
+export const InitCountDown = () => {
 
     const [activeSection, setActiveSection] = useState('init');
+    let navigate = useNavigate();
 
     const changeState = () => {
         setActiveSection('fight');
+        setTimeout(() => {
+            navigate(pageLinks.duringGame);
+        }, 4000);
     }
 
     useEffect(() => {
@@ -17,22 +23,6 @@ export const TeamReadySection = () => {
 
     return (
         <div className="init-game-content">
-            <div className="init-game-item">
-                <div className="init-game-title">
-                    <img src='/images/team-green.png' />
-                </div>
-                <div className="init-game-team">
-                    <img src='/images/team-1-green.png' />
-                </div>
-            </div>
-            <div className="init-game-item">
-                <div className="init-game-title">
-                    <img src='/images/team-blue.png' />
-                </div>
-                <div className="init-game-team">
-                    <img src='/images/team-2-blue.png' />
-                </div>
-            </div>
             <div className="section-absolute">
                 {
                     activeSection == 'init'
@@ -50,8 +40,6 @@ export const TeamReadySection = () => {
                             </div>
                 }
             </div>
-            <div className="square-absolute square-left"></div>
-            <div className="square-absolute square-right"></div>
         </div>
     )
 }
